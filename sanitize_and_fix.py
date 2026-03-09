@@ -4,130 +4,86 @@ import unicodedata
 import shutil
 
 def sanitize_name(name):
+    # Convert to lowercase
     name = name.lower()
+    # Remove accents
     name = "".join(c for c in unicodedata.normalize('NFD', name) if unicodedata.category(c) != 'Mn')
+    # Replace anything not a-z, 0-9, dot, or hyphen with hyphen
     name = re.sub(r'[^a-z0-9.-]', '-', name)
+    # Remove double hyphens
     name = re.sub(r'-+', '-', name)
+    # Trim hyphens from starts/ends
     name = name.strip('-')
     return name
 
 base_dir = os.getcwd()
 img_root = os.path.join(base_dir, 'assets', 'img')
 
-# 1. Collect all paths from code
-paths_in_code = []
-for filename in ['index.html', 'style.css', 'app.js']:
-    if os.path.exists(filename):
-        with open(filename, 'r', encoding='utf-8') as f:
-            content = f.read()
-            matches = re.findall(r'(\.\./modificados/[^"\')\s]+|productos/[^"\')\s]+|logo/[^"\')\s]+)', content)
-            paths_in_code.extend(matches)
-
-paths_in_code = list(set(paths_in_code))
-print(f"Found {len(paths_in_code)} potential paths in code.")
-
-# 2. Rename everything in assets/img to something unique and safe first
-# We do this in two passes to avoid case-sensitivity issues during renames
-rename_map = {} # old_rel -> new_rel
-
-# First pass: Rename files/dirs
-for root, dirs, files in os.walk(img_root, topdown=False):
-    for f in files:
-        if f == ".DS_Store":
-            os.remove(os.path.join(root, f))
-            continue
-        old_path = os.path.join(root, f)
-        rel_to_img = os.path.relpath(old_path, img_root)
-        new_name = sanitize_name(f)
-        
-        # We'll build the final path later. For now just move and sanitize name.
-        # To avoid case move issues, move to a temp name
-        temp_path = os.path.join(root, "TEMP_" + f)
-        os.rename(old_path, temp_path)
-        
-        final_path = os.path.join(root, new_name)
-        if os.path.exists(final_path) and final_path != temp_path:
-             # If it exists (collision), add counter
-             base, ext = os.path.splitext(new_name)
-             c = 1
-             while os.path.exists(os.path.join(root, f"{base}-{c}{ext}")):
-                 c += 1
-             final_path = os.path.join(root, f"{base}-{c}{ext}")
-        
-        os.rename(temp_path, final_path)
-
-    for d in dirs:
-        old_path = os.path.join(root, d)
-        new_name = sanitize_name(d)
-        temp_path = os.path.join(root, "TEMPDIR_" + d)
-        os.rename(old_path, temp_path)
-        final_path = os.path.join(root, new_name)
-        
-        if os.path.exists(final_path):
-            # Merge contents
-            for item in os.listdir(temp_path):
-                shutil.move(os.path.join(temp_path, item), os.path.join(final_path, item))
-            os.rmdir(temp_path)
-        else:
-            os.rename(temp_path, final_path)
-
-# 3. Build a fresh list of ALL files in assets/img
-all_files = []
+# Build a map of ALL files in assets/img with their "sanitized signature"
+# signature -> actual_sanitized_rel_path
+physical_files = {}
 for root, dirs, files in os.walk(img_root):
     for f in files:
         rel = os.path.relpath(os.path.join(root, f), base_dir)
-        all_files.append(rel)
+        # Signature is the sanitized version of the path relative to assets/img
+        parts = rel.replace('assets/img/', '').split('/')
+        sig = '/'.join([sanitize_name(p) for p in parts])
+        physical_files[sig] = rel
 
-# 4. Create mapping from code-path to new physical path
-final_replacements = {}
+print(f"Indexado {len(physical_files)} archivos físicos.")
 
-for p in paths_in_code:
-    # Normalize path from code to what we expect it to be in assets/img
-    # ../modificados/A/B -> A/B
-    # productos/X/Y -> productos/X/Y
-    # logo/Z -> logo/Z
-    
-    clean_p = p.replace('../modificados/', '')
-    # Ensure it doesn't lead with /
-    clean_p = clean_p.lstrip('/')
-    
-    # Target in assets/img
-    parts = clean_p.split('/')
-    sanitized_parts = [sanitize_name(part) for part in parts]
-    
-    # Attempt to find the file
-    target_rel = "assets/img/" + "/".join(sanitized_parts)
-    
-    if target_rel in all_files:
-        final_replacements[p] = target_rel
-    else:
-        # Fuzzy match
-        for f in all_files:
-            if f.lower() == target_rel.lower():
-                final_replacements[p] = f
-                break
+# Files to update
+targets = ['index.html', 'style.css', 'app.js']
 
-# 5. Apply
-for filename in ['index.html', 'style.css', 'app.js']:
+for filename in targets:
     if not os.path.exists(filename): continue
     with open(filename, 'r', encoding='utf-8') as f:
         content = f.read()
-    
-    new_content = content
-    sorted_reps = sorted(final_replacements.items(), key=lambda x: len(x[0]), reverse=True)
+
+    # Regex to find anything that looks like an image path we care about
+    # Matches strings starting with ../modificados/, productos/, or logo/ inside quotes or url()
+    pattern = r'(\.\./modificados/|productos/|logo/)([^"\')\n]+)'
     count = 0
-    for old, new in sorted_reps:
-        if old in new_content:
-            new_content = new_content.replace(old, new)
-            count += 1
+    
+    def replacer(match):
+        prefix = match.group(1)
+        path_remainder = match.group(2).strip()
+        
+        # Build signature
+        parts = path_remainder.split('/')
+        sig = '/'.join([sanitize_name(p) for p in parts])
+        
+        # If it's productos/ or logo/, we need to include that in sig prefix if physical_files sig includes it
+        # Actually physical_files sig is relative to assets/img/
+        # so for productos/X -> productos/x
+        
+        if prefix == 'productos/':
+             full_sig = 'productos/' + sig
+        elif prefix == 'logo/':
+             full_sig = 'logo/' + sig
+        else: # ../modificados/
+             full_sig = sig
+        
+        if full_sig in physical_files:
+            return physical_files[full_sig]
+        else:
+            # Try fuzzy without extension if it fails?
+            # Or just return original if not found
+            # print(f"Not found: {full_sig}")
+            return match.group(0)
+
+    new_content = re.sub(pattern, replacer, content)
+    
+    # Second pass for hardcoded logo paths that don't match pattern exactly if any
+    # (Simplified)
     
     with open(filename, 'w', encoding='utf-8') as f:
         f.write(new_content)
-    print(f"Updated {filename}: {count} replacements.")
+    
+    # Verify count roughly by diff
+    if new_content != content:
+        print(f"Updated {filename}")
+    else:
+        print(f"No changes in {filename}")
 
-# Cleanup outside folders
-for folder in ['productos', 'logo']:
-    if os.path.exists(folder):
-        shutil.rmtree(folder)
-
-print("Repositorio sanitizado y listo para Vercel.")
+print("Sanitization applied to code.")
