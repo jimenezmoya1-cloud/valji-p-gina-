@@ -41,10 +41,31 @@
       <p class="cart-empty">Tu carrito está vacío.<br>¡Añade productos para ordenar!</p>
     </div>
     <div class="cart-footer">
-      <div class="cart-total">
-        <span>Total:</span>
-        <span id="cart-total-price">₡0</span>
+      <div class="cart-promo-code">
+        <input type="text" id="promo-code-input" placeholder="Código promocional" />
+        <button id="apply-promo-btn">Aplicar</button>
       </div>
+      <div id="promo-message" class="promo-message"></div>
+
+      <div class="cart-calc">
+        <div class="calc-row">
+          <span>Subtotal:</span>
+          <span id="cart-subtotal">₡0</span>
+        </div>
+        <div class="calc-row" id="div-discount" style="display:none">
+          <span>Descuento:</span>
+          <span id="cart-discount">-₡0</span>
+        </div>
+        <div class="calc-row">
+          <span>IVA (13%):</span>
+          <span id="cart-iva">₡0</span>
+        </div>
+        <div class="calc-row total">
+          <span>Total:</span>
+          <span id="cart-total-price">₡0</span>
+        </div>
+      </div>
+
       <div class="free-shipping-badge">🚚 Envío GRATIS a nivel nacional</div>
       <a id="whatsapp-order-btn" href="#" target="_blank" class="btn-whatsapp-order">
         <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
@@ -141,7 +162,8 @@
         <div class="hero-badge">🇨🇷 Distribuidora 100% Costarricense · Desde 1997</div>
         <h1 class="hero-title">Rinde al <span class="gradient-text">máximo</span><br />con la nutrición<br /><span
             class="gradient-text">que mereces</span></h1>
-        <p class="hero-subtitle">PowerBar · Muscle Milk · Oikos | Para triatlonistas, ciclistas, corredores y deportistas
+        <p class="hero-subtitle">PowerBar · Muscle Milk · Oikos | Para triatlonistas, ciclistas, corredores y
+          deportistas
           que no conocen límites.</p>
         <div class="hero-free-shipping">🚚 Envío GRATIS a nivel nacional en todos tus pedidos</div>
         <div class="hero-ctas">
@@ -206,9 +228,11 @@
     <div class="filter-tabs" id="filter-tabs">
       <button class="filter-tab active" data-filter="all" id="filter-all">Todos</button>
       <button class="filter-tab" data-filter="proteinas" id="filter-proteinas">Proteínas</button>
+      <button class="filter-tab" data-filter="suplementos" id="filter-suplementos">Suplementos</button>
       <button class="filter-tab" data-filter="geles" id="filter-geles">PowerGel</button>
       <button class="filter-tab" data-filter="electrolitos" id="filter-electrolitos">Electrolitos</button>
       <button class="filter-tab" data-filter="barras" id="filter-barras">Barras</button>
+      <button class="filter-tab" data-filter="otros" id="filter-otros">Otros</button>
     </div>
 
     <!-- PRODUCTS GRID -->
@@ -242,7 +266,8 @@
             <span class="about-feature-icon">✅</span>
             <div>
               <strong>Calidad y Seguridad</strong>
-              <p>Valji cumple con estrictas regulaciones para cuidar tu salud y garantizar excelencia en nutrición y rendimiento.</p>
+              <p>Valji cumple con estrictas regulaciones para cuidar tu salud y garantizar excelencia en nutrición y
+                rendimiento.</p>
             </div>
           </div>
         </div>
@@ -480,13 +505,20 @@
         <div class="footer-badges">
           <img src="assets/img/nuevooo/logotipo-con-fondo-transparente.png" alt="Valji" class="footer-badge-sm" />
           <img src="assets/img/nuevooo/untitled-design-310x438.png" alt="PYME" class="footer-badge-sm" />
-          <img src="assets/img/nuevooo/carbono-neutral-costa-rica.webp" alt="Carbono Neutro"
-            class="footer-badge-sm" />
+          <img src="assets/img/nuevooo/carbono-neutral-costa-rica.webp" alt="Carbono Neutro" class="footer-badge-sm" />
         </div>
         <p class="footer-copyright">© 2025 Distribuidora Valji S.A. · Todos los derechos reservados · Costa Rica</p>
       </div>
     </div>
   </footer>
+
+  <!-- ===== SINPE ANNOUNCEMENT ===== -->
+  <div class="sinpe-announcement">
+    <div class="sinpe-content">
+      <span class="sinpe-icon">📱</span>
+      <span class="sinpe-text">SINPE MÓVIL AL <strong>8672-4000</strong></span>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>

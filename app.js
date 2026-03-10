@@ -317,7 +317,47 @@ const PRODUCTS = [
     description: '40% de proteína de alta calidad en una textura crujiente y suave irresistible. Sin azúcares añadidos, con mezcla perfecta de ingredientes crujientes y capa suave. La recompensa ideal después del entrenamiento. Es el snack proteico premium para el deportista exigente. Cologne List®.',
     benefits: ['40% proteína', 'Sin azúcar añadido', 'Textura crujiente', 'Post-workout', 'Cologne List®'],
   },
+  {
+    id: 'creatina-proseries',
+    name: 'Creatina ProSeries',
+    category: 'suplementos',
+    categoryLabel: 'Suplementos',
+    price: 23900,
+    priceLabel: '₡23.900',
+    priceUnit: 'por presentación',
+    flavors: ['Unflavored'],
+    images: [
+      'assets/img/productos/creatina/creatina-proseries.png',
+    ],
+    description: 'Creatina ProSeries de Muscle Milk es monohidrato de creatina de alta pureza. Ayuda a aumentar la fuerza, el rendimiento y la masa muscular. Certificado por NSF para Deporte, garantizando que está libre de sustancias prohibidas.',
+    benefits: ['100% Monohidrato', 'Aumento de fuerza', 'Masa muscular', 'NSF Certified'],
+  },
+  {
+    id: 'anfora-powerbar',
+    name: 'Ánfora PowerBar',
+    category: 'otros',
+    categoryLabel: 'Otros',
+    price: 4000,
+    priceLabel: '₡4.000',
+    priceUnit: 'por unidad',
+    flavors: ['Estándar'],
+    images: [
+      'assets/img/productos/anfora/anfora-powerbar.png',
+    ],
+    description: 'Botella deportiva Ánfora PowerBar de alta calidad. Diseño ergonómico, fácil de apretar y con válvula de alto flujo. Ideal para hidratarte durante tus entrenamientos de ciclismo, running o en el gimnasio.',
+    benefits: ['Fácil de apretar', 'Válvula alto flujo', 'Diseño ergonómico', 'Libre de BPA'],
+  },
 ];
+
+const PROMO_CODES = {
+  'PURAELITE': 0.05, 'PISTA5': 0.05, 'TICOFIT': 0.05, 'PODIUM5': 0.05,
+  'ELITE10': 0.10, 'RECORD10': 0.10, 'RÉCORD10': 0.10, 'TICOSTRONG': 0.10, 'SPRINT10': 0.10, 'VOLTAJE10': 0.10,
+  'ORO15': 0.15, 'CAMPEON': 0.15, 'MEDALLA15': 0.15,
+  'FUEGO20': 0.20, 'CUMBRE20': 0.20, 'RESISTENCIA': 0.20, 'VALJI20': 0.20, 'JUEGOS20': 0.20,
+  'MAXIMA30': 0.30, 'OFFSEASON': 0.30, 'TRAINING30': 0.30, 'NOPARA30': 0.30,
+  'LEGEND40': 0.40, 'CROWN40': 0.40, 'GOAT40': 0.40, 'ELITE40': 0.40, 'ÉLITE40': 0.40,
+  'COACHVALJI': 0.23, 'GYMVALJI': 0.23, 'NUTRIVALJI': 0.23, 'ALIADOSVALJI': 0.23
+};
 
 /* ── UTILS ────────────────────────────────────────────────── */
 function formatPrice(n) {
@@ -330,6 +370,8 @@ function buildWALink(text) {
 
 /* ── CART STATE ───────────────────────────────────────────── */
 let cart = [];
+let appliedDiscount = 0; // percentage as decimal
+let appliedPromoCode = '';
 
 function getCartItem(productId, flavor) {
   return cart.find(i => i.productId === productId && i.flavor === flavor);
@@ -368,9 +410,28 @@ function changeCartQty(productId, flavor, delta) {
 }
 
 function updateCart() {
-  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const discountAmount = Math.round(subtotal * appliedDiscount);
+  const afterDiscount = subtotal - discountAmount;
+  const iva = Math.round(afterDiscount * 0.13);
+  const total = afterDiscount + iva;
+
   document.getElementById('cart-count').textContent = cart.reduce((s, i) => s + i.qty, 0);
+
+  // Update Cart Footer
+  document.getElementById('cart-subtotal').textContent = formatPrice(subtotal);
+
+  const divDiscount = document.getElementById('div-discount');
+  if (appliedDiscount > 0) {
+    divDiscount.style.display = 'flex';
+    document.getElementById('cart-discount').textContent = `-${formatPrice(discountAmount)}`;
+  } else {
+    divDiscount.style.display = 'none';
+  }
+
+  document.getElementById('cart-iva').textContent = formatPrice(iva);
   document.getElementById('cart-total-price').textContent = formatPrice(total);
+
   renderCartItems();
   buildWAOrderLink();
 }
@@ -404,14 +465,27 @@ function buildWAOrderLink() {
     document.getElementById('whatsapp-order-btn').href = buildWALink('Hola Valji, me gustaría hacer un pedido.');
     return;
   }
+
   let msg = '¡Hola Valji! Quiero hacer el siguiente pedido:\n\n';
   cart.forEach(item => {
     msg += `• ${item.name}`;
     if (item.flavor) msg += ` – ${item.flavor}`;
     msg += ` x${item.qty} (${formatPrice(item.price * item.qty)})\n`;
   });
-  const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  msg += `\n*Total: ${formatPrice(total)}*`;
+
+  const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
+  const discountAmount = Math.round(subtotal * appliedDiscount);
+  const afterDiscount = subtotal - discountAmount;
+  const iva = Math.round(afterDiscount * 0.13);
+  const total = afterDiscount + iva;
+
+  msg += `\nSubtotal: ${formatPrice(subtotal)}`;
+  if (appliedDiscount > 0) {
+    msg += `\nDescuento (${appliedPromoCode}): -${formatPrice(discountAmount)}`;
+  }
+  msg += `\nIVA (13%): ${formatPrice(iva)}`;
+  msg += `\n*TOTAL: ${formatPrice(total)}*`;
+
   msg += '\n\n🚚 Envío gratis a nivel nacional';
   msg += '\n\n¿Pueden confirmar disponibilidad y coordinar el pago? Gracias 🙏';
   document.getElementById('whatsapp-order-btn').href = buildWALink(msg);
@@ -662,6 +736,34 @@ document.querySelectorAll('.stat-card, .trust-item, .faq-item').forEach(el => {
   el.style.transform = 'translateY(20px)';
   el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
   revealObserver.observe(el);
+});
+
+/* ── PROMO CODES ───────────────────────────────────────────── */
+document.getElementById('apply-promo-btn').addEventListener('click', () => {
+  const code = document.getElementById('promo-code-input').value.trim().toUpperCase();
+  const msgEl = document.getElementById('promo-message');
+
+  if (!code) {
+    appliedDiscount = 0;
+    appliedPromoCode = '';
+    msgEl.textContent = '';
+    updateCart();
+    return;
+  }
+
+  if (PROMO_CODES[code]) {
+    appliedDiscount = PROMO_CODES[code];
+    appliedPromoCode = code;
+    msgEl.textContent = `¡Código ${code} aplicado! (${appliedDiscount * 100}% off)`;
+    msgEl.className = 'promo-message success';
+    showToast(`Código promo ${code} aplicado! 🏷️`);
+  } else {
+    appliedDiscount = 0;
+    appliedPromoCode = '';
+    msgEl.textContent = 'Código no válido.';
+    msgEl.className = 'promo-message error';
+  }
+  updateCart();
 });
 
 /* ── INIT ─────────────────────────────────────────────────── */

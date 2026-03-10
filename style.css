@@ -264,7 +264,7 @@ ul {
 }
 
 .logo-img {
-  height: 52px;
+  height: 68px;
   width: auto;
   object-fit: contain;
   filter: drop-shadow(0 2px 8px rgba(0, 196, 255, 0.2));
@@ -553,6 +553,74 @@ ul {
 
 #cart-total-price {
   color: var(--accent);
+}
+
+.cart-calc {
+  background: var(--bg-2);
+  padding: 1rem;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.calc-row.total {
+  border-top: 1px solid var(--border);
+  padding-top: 0.6rem;
+  margin-top: 0.2rem;
+  font-family: var(--font);
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.calc-row.total span:last-child {
+  color: var(--accent);
+}
+
+.cart-promo-code {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.cart-promo-code input {
+  flex: 1;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  outline: none;
+}
+
+.cart-promo-code button {
+  padding: 0.6rem 1rem;
+  background: var(--text);
+  color: #fff;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
+.promo-message {
+  font-size: 0.75rem;
+  font-weight: 600;
+  min-height: 1rem;
+}
+
+.promo-message.success {
+  color: var(--accent-3);
+}
+
+.promo-message.error {
+  color: #f43f5e;
 }
 
 .free-shipping-badge {
@@ -870,30 +938,34 @@ ul {
 
 .product-card-category {
   position: absolute;
-  top: 12px;
-  left: 12px;
+  top: 10px;
+  left: 10px;
   background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(6px);
   border: 1px solid var(--border);
   color: var(--accent);
-  font-size: 0.72rem;
+  font-size: 0.68rem;
   font-weight: 700;
-  padding: 0.25rem 0.7rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 50px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
+  max-width: 45%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .product-card-shipping {
   position: absolute;
-  top: 12px;
-  right: 12px;
+  top: 10px;
+  right: 10px;
   background: rgba(30, 255, 142, 0.12);
   border: 1px solid rgba(30, 255, 142, 0.3);
   color: var(--accent-3);
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   font-weight: 700;
-  padding: 0.25rem 0.6rem;
+  padding: 0.2rem 0.5rem;
   border-radius: 50px;
 }
 
@@ -1902,4 +1974,84 @@ ul {
   .hero-title {
     font-size: clamp(2.2rem, 8vw, 3rem);
   }
+}
+
+@media (max-width: 400px) {
+  .product-card-footer {
+    flex-direction: column;
+    padding: 0 1.2rem 1.2rem;
+  }
+
+  .btn-card-details {
+    width: 100%;
+    order: 2;
+  }
+
+  .btn-card-wa {
+    width: 100%;
+    order: 1;
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .btn-card-wa::after {
+    content: "Consultar";
+    font-weight: 700;
+  }
+}
+
+/* ── SINPE BAR STYLES ─────────────────────────────────────── */
+.sinpe-announcement {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--text);
+  color: #fff;
+  z-index: 999;
+  padding: 8px 0;
+  text-align: center;
+  font-family: var(--font);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.sinpe-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: sinpe-glow 3s ease-in-out infinite;
+}
+
+.sinpe-text {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.sinpe-text strong {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+@keyframes sinpe-glow {
+
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.03);
+    filter: drop-shadow(0 0 8px var(--accent));
+  }
+}
+
+/* Adjust body padding for fixed bar */
+body {
+  padding-bottom: 50px;
 }
