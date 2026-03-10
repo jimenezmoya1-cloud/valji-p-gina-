@@ -486,8 +486,8 @@ function buildWAOrderLink() {
   msg += `\nIVA (13%): ${formatPrice(iva)}`;
   msg += `\n*TOTAL: ${formatPrice(total)}*`;
 
-  msg += '\n\n🚚 Envío gratis a nivel nacional';
-  msg += '\n\nPueden confirmar disponibilidad y coordinar el pago. Gracias 🙏';
+  msg += '\n\n📦 *Envío gratis* a nivel nacional 🇨🇷';
+  msg += '\n\nPueden confirmar disponibilidad para coordinar el pago. ¡Gracias! ⚡🏆';
   document.getElementById('whatsapp-order-btn').href = buildWALink(msg);
 }
 
