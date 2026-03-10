@@ -1759,7 +1759,92 @@ ul {
   background: var(--text-dim);
 }
 
+/* ── IMAGES & BANNERS ────────────────────────────────────── */
+.banner-container {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+
+.distributed-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── SINPE BAR STYLES ─────────────────────────────────────── */
+.sinpe-announcement {
+  position: relative;
+  background: var(--text);
+  color: #fff;
+  z-index: 10;
+  padding: 12px 1rem;
+  text-align: center;
+  font-family: var(--font);
+  border-top: 2px solid var(--accent);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  margin-top: 1rem;
+}
+
+.sinpe-content {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: sinpe-glow 3s ease-in-out infinite;
+}
+
+.sinpe-text {
+  font-size: 0.95rem;
+  letter-spacing: 0.05em;
+}
+
+.sinpe-text strong {
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+
+@keyframes sinpe-glow {
+
+  0%,
+  100% {
+    opacity: 0.9;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 5px var(--accent));
+  }
+}
+
+/* Body padding for fixed elements removed */
+body {
+  padding-bottom: 0;
+}
+
 /* ── RESPONSIVE ───────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .hero-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-text-content {
+    max-width: 100%;
+  }
+
+  .hero-ctas {
+    justify-content: center;
+  }
+
+  .hero-title {
+    font-size: clamp(2.4rem, 9vw, 3.2rem);
+    line-height: 1;
+  }
+}
+
 @media (max-width: 1024px) {
   .about-container {
     grid-template-columns: 1fr;
@@ -1827,7 +1912,38 @@ ul {
   }
 
   .hero-title {
-    font-size: 2.6rem;
+    font-size: 2.8rem;
+    line-height: 1;
+  }
+
+  .hero-badge {
+    font-size: 0.7rem;
+    padding: 0.35rem 1rem;
+  }
+
+  .hero-free-shipping {
+    padding: 0.4rem 1.1rem;
+    font-size: 0.8rem;
+  }
+
+  .about-feature-icon {
+    font-size: 1.8rem;
+  }
+
+  .about-feature strong {
+    font-size: 1rem;
+  }
+
+  .about-feature p {
+    font-size: 0.85rem;
+  }
+
+  .sinpe-text {
+    font-size: 0.8rem;
+  }
+
+  .sinpe-text strong {
+    font-size: 0.95rem;
   }
 }
 
@@ -1944,131 +2060,4 @@ ul {
   padding: 4rem 1.5rem;
   max-width: 1320px;
   margin: 0 auto;
-}
-
-.banner-container {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-card);
-}
-
-.distributed-banner {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-@media (max-width: 900px) {
-  .hero-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .hero-text-content {
-    max-width: 100%;
-  }
-
-  .hero-ctas {
-    justify-content: center;
-  }
-
-  .hero-title {
-    font-size: clamp(2.2rem, 8vw, 3rem);
-  }
-}
-
-@media (max-width: 400px) {
-  .product-card-footer {
-    flex-direction: column;
-    padding: 0 1.2rem 1.2rem;
-  }
-
-  .btn-card-details {
-    width: 100%;
-    order: 2;
-  }
-
-  .btn-card-wa {
-    width: 100%;
-    order: 1;
-    display: flex;
-    justify-content: center;
-    gap: 0.5rem;
-    padding: 0.7rem;
-    font-size: 0.95rem;
-  }
-
-  .btn-card-wa::after {
-    content: "Consultar";
-    font-weight: 700;
-  }
-}
-
-/* ── SINPE BAR STYLES ─────────────────────────────────────── */
-.sinpe-announcement {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--text);
-  color: #fff;
-  z-index: 999;
-  padding: 8px 0;
-  text-align: center;
-  font-family: var(--font);
-  border-top: 2px solid var(--accent);
-  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.sinpe-content {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  animation: sinpe-glow 3s ease-in-out infinite;
-}
-
-.sinpe-text {
-  font-size: 0.95rem;
-  letter-spacing: 0.05em;
-}
-
-.sinpe-text strong {
-  color: var(--accent);
-  font-size: 1.1rem;
-}
-
-@keyframes sinpe-glow {
-
-  0%,
-  100% {
-    opacity: 0.9;
-    transform: scale(1);
-  }
-
-  50% {
-    opacity: 1;
-    transform: scale(1.03);
-    filter: drop-shadow(0 0 8px var(--accent));
-  }
-}
-
-@media (max-width: 480px) {
-  .product-card-category {
-    top: 8px;
-    left: 8px;
-    font-size: 0.6rem;
-    max-width: 80%;
-  }
-
-  .product-card-shipping {
-    bottom: 8px;
-    right: 8px;
-    font-size: 0.58rem;
-  }
-}
-
-/* Adjust body padding for fixed bar */
-body {
-  padding-bottom: 50px;
 }
