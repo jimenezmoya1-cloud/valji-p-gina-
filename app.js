@@ -2,6 +2,22 @@
    VALJI – APP.JS
    ============================================================ */
 
+/* ── SVG ICONS (Lucide) ──────────────────────────────────── */
+const ICON = {
+  cart: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>',
+  truck: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>',
+  trophy: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>',
+  zap: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>',
+  leaf: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 20 2 20 2s-3 5.5-5 11.2A7 7 0 0 1 11 20z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>',
+  medal: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></svg>',
+  bike: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg>',
+  check: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>',
+  phone: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>',
+  trash: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>',
+  plus: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>',
+  globe: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+};
+
 /* ── PRODUCT DATA ─────────────────────────────────────────── */
 const WHATSAPP = '50686724000';
 
@@ -359,6 +375,11 @@ const PROMO_CODES = {
   'COACHVALJI': 0.23, 'GYMVALJI': 0.23, 'NUTRIVALJI': 0.23, 'ALIADOSVALJI': 0.23
 };
 
+const PROMO_2X1 = [
+  'DOBLE1', 'DUPLA', '2X1VALJI', '2X1POWER', 'DOSXUNO',
+  'PURA2X1', 'AMIGOS2X1', 'TEAM2X1', 'COMBO2X1', 'PAIR'
+];
+
 /* ── UTILS ────────────────────────────────────────────────── */
 function formatPrice(n) {
   return '₡' + n.toLocaleString('es-CR');
@@ -370,8 +391,9 @@ function buildWALink(text) {
 
 /* ── CART STATE ───────────────────────────────────────────── */
 let cart = [];
-let appliedDiscount = 0; // percentage as decimal
+let appliedDiscount = 0;
 let appliedPromoCode = '';
+let is2x1 = false;
 
 function getCartItem(productId, flavor) {
   return cart.find(i => i.productId === productId && i.flavor === flavor);
@@ -393,7 +415,7 @@ function addToCart(product, flavor, qty = 1) {
     });
   }
   updateCart();
-  showToast(`¡${product.name}${flavor ? ' – ' + flavor : ''} agregado al carrito! 🛒`);
+  showToast(`¡${product.name}${flavor ? ' – ' + flavor : ''} agregado al carrito!`);
 }
 
 function removeFromCart(productId, flavor) {
@@ -409,9 +431,22 @@ function changeCartQty(productId, flavor, delta) {
   else updateCart();
 }
 
+function calc2x1Discount() {
+  const units = [];
+  cart.forEach(item => {
+    for (let i = 0; i < item.qty; i++) units.push(item.price);
+  });
+  units.sort((a, b) => a - b);
+  let discount = 0;
+  for (let i = 0; i < Math.floor(units.length / 2); i++) {
+    discount += units[i];
+  }
+  return discount;
+}
+
 function updateCart() {
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  const discountAmount = Math.round(subtotal * appliedDiscount);
+  const discountAmount = is2x1 ? calc2x1Discount() : Math.round(subtotal * appliedDiscount);
   const afterDiscount = subtotal - discountAmount;
   const iva = Math.round(afterDiscount * 0.13);
   const total = afterDiscount + iva;
@@ -453,7 +488,7 @@ function renderCartItems() {
           <button class="cart-qty-btn" onclick="changeCartQty('${item.productId}','${item.flavor}',-1)">−</button>
           <span class="cart-qty-val">${item.qty}</span>
           <button class="cart-qty-btn" onclick="changeCartQty('${item.productId}','${item.flavor}',1)">+</button>
-          <button class="cart-remove-btn" onclick="removeFromCart('${item.productId}','${item.flavor}')" title="Eliminar">🗑</button>
+          <button class="cart-remove-btn" onclick="removeFromCart('${item.productId}','${item.flavor}')" title="Eliminar">${ICON.trash}</button>
         </div>
       </div>
     </div>
@@ -479,9 +514,11 @@ function buildWAOrderLink() {
   const iva = Math.round(afterDiscount * 0.13);
   const total = afterDiscount + iva;
 
+  const discountAmount2 = is2x1 ? calc2x1Discount() : Math.round(subtotal * appliedDiscount);
   msg += `\nSubtotal: ${formatPrice(subtotal)}`;
-  if (appliedDiscount > 0) {
-    msg += `\nDescuento (${appliedPromoCode}): -${formatPrice(discountAmount)}`;
+  if (is2x1 || appliedDiscount > 0) {
+    const label = is2x1 ? `2x1 (${appliedPromoCode})` : appliedPromoCode;
+    msg += `\nDescuento (${label}): -${formatPrice(discountAmount2)}`;
   }
   msg += `\nIVA (13%): ${formatPrice(iva)}`;
   msg += `\n*TOTAL: ${formatPrice(total)}*`;
@@ -638,11 +675,11 @@ function renderProducts(filter = 'all') {
   const filtered = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
   const grid = document.getElementById('products-grid');
   grid.innerHTML = filtered.map((product, idx) => `
-    <div class="product-card" style="animation-delay:${idx * 0.05}s" data-id="${product.id}">
+    <div class="product-card" style="animation-delay:${idx * 0.06}s" data-id="${product.id}" role="button" tabindex="0" aria-label="Ver detalles de ${product.name}">
       <div class="product-card-img-wrap">
         <img class="product-card-img" src="${product.images[0]}" alt="${product.name}" loading="lazy" onerror="this.src=''" />
         <span class="product-card-category">${product.categoryLabel}</span>
-        <span class="product-card-shipping">🚚 Envío gratis</span>
+        <span class="product-card-shipping"><span class="icon-inline">${ICON.truck}</span> Envio gratis</span>
       </div>
       <div class="product-card-body">
         <div class="product-card-name">${product.name}</div>
@@ -653,13 +690,23 @@ function renderProducts(filter = 'all') {
         <div class="product-card-price">${product.priceLabel}</div>
       </div>
       <div class="product-card-footer">
-        <button class="btn-card-details" onclick="openProductModal(PRODUCTS.find(p=>p.id==='${product.id}'))">Ver detalles</button>
-        <a class="btn-card-wa" href="${buildWALink(`Hola Valji, me interesa: ${product.name}. Tienen disponibilidad.`)}" target="_blank" aria-label="WhatsApp" title="Consultar por WhatsApp">
+        ${product.flavors.length === 1 ? `<button class="btn-card-quickadd" onclick="event.stopPropagation();addToCart(PRODUCTS.find(p=>p.id==='${product.id}'),'${product.flavors[0]}',1)" aria-label="Agregar al carrito"><span class="icon-inline">${ICON.cart}</span> Agregar</button>` : `<span class="btn-card-details">Ver detalles</span>`}
+        <a class="btn-card-wa" href="${buildWALink(`Hola Valji, me interesa: ${product.name}. Tienen disponibilidad.`)}" target="_blank" aria-label="WhatsApp" title="Consultar por WhatsApp" onclick="event.stopPropagation()">
           <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5C21.7 6.7 19.3 5.7 16.7 5.7C11.3 5.7 6.9 10.1 6.9 15.5C6.9 17.3 7.4 19 8.2 20.5L6.8 25.5L11.9 24.1C13.4 24.9 15 25.3 16.7 25.3C22.1 25.3 26.5 20.9 26.5 15.5C26.5 12.9 25.3 10.3 23.5 8.5ZM16.7 23.7C15.2 23.7 13.6 23.3 12.3 22.5L11.9 22.3L8.9 23.1L9.7 20.2L9.5 19.8C8.6 18.4 8.2 16.9 8.2 15.5C8.2 10.9 11.9 7.1 16.7 7.1C19 7.1 21.1 8 22.7 9.6C24.3 11.2 25.2 13.3 25.2 15.5C25.2 20.1 21.4 23.7 16.7 23.7ZM21.4 17.7C21.1 17.5 19.6 16.8 19.4 16.7C19.1 16.6 19 16.5 18.8 16.8C18.7 17.1 18.1 17.7 17.9 17.9C17.8 18.1 17.6 18.1 17.4 18C15.8 17.2 14.8 16.6 13.7 14.8C13.4 14.3 14 14.3 14.5 13.3C14.6 13.1 14.5 12.9 14.5 12.8C14.4 12.6 13.8 11.1 13.6 10.5C13.3 9.9 13.1 10 12.9 10C12.7 10 12.6 10 12.4 10C12.2 10 11.9 10.1 11.6 10.4C11.4 10.7 10.6 11.4 10.6 12.9C10.6 14.4 11.6 15.8 11.8 16.1C12 16.3 13.8 19 16.4 19.9C18.1 20.5 18.8 20.6 19.7 20.4C20.3 20.3 21.4 19.7 21.7 19C21.9 18.3 21.9 17.7 21.7 17.7H21.4Z" fill="white"/></svg>
         </a>
       </div>
     </div>
   `).join('');
+
+  // Card click → open modal (delegated)
+  grid.querySelectorAll('.product-card').forEach(card => {
+    const handler = () => {
+      const p = PRODUCTS.find(p => p.id === card.dataset.id);
+      if (p) openProductModal(p);
+    };
+    card.addEventListener('click', handler);
+    card.addEventListener('keydown', e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); handler(); } });
+  });
 }
 
 // Filter tabs
@@ -726,15 +773,16 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0)';
+      entry.target.style.transform = 'translateY(0) scale(1)';
+      revealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.stat-card, .trust-item, .faq-item').forEach(el => {
+document.querySelectorAll('.stat-card, .trust-item, .faq-item, .about-feature, .contact-item').forEach((el, i) => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(20px)';
-  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  el.style.transform = 'translateY(24px) scale(0.97)';
+  el.style.transition = `opacity 0.6s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.06}s, transform 0.6s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.06}s`;
   revealObserver.observe(el);
 });
 
@@ -746,21 +794,31 @@ document.getElementById('apply-promo-btn').addEventListener('click', () => {
   if (!code) {
     appliedDiscount = 0;
     appliedPromoCode = '';
+    is2x1 = false;
     msgEl.textContent = '';
     updateCart();
     return;
   }
 
-  if (PROMO_CODES[code]) {
+  if (PROMO_2X1.includes(code)) {
+    is2x1 = true;
+    appliedDiscount = 0;
+    appliedPromoCode = code;
+    msgEl.textContent = `¡Codigo ${code} aplicado! (2x1 - el mas barato gratis)`;
+    msgEl.className = 'promo-message success';
+    showToast(`Promo 2x1 activada!`);
+  } else if (PROMO_CODES[code]) {
+    is2x1 = false;
     appliedDiscount = PROMO_CODES[code];
     appliedPromoCode = code;
-    msgEl.textContent = `¡Código ${code} aplicado! (${appliedDiscount * 100}% off)`;
+    msgEl.textContent = `¡Codigo ${code} aplicado! (${appliedDiscount * 100}% off)`;
     msgEl.className = 'promo-message success';
-    showToast(`Código promo ${code} aplicado! 🏷️`);
+    showToast(`Codigo promo ${code} aplicado!`);
   } else {
     appliedDiscount = 0;
     appliedPromoCode = '';
-    msgEl.textContent = 'Código no válido.';
+    is2x1 = false;
+    msgEl.textContent = 'Codigo no valido.';
     msgEl.className = 'promo-message error';
   }
   updateCart();
