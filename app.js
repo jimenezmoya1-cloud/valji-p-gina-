@@ -562,15 +562,50 @@ document.getElementById('cart-btn').addEventListener('click', openCart);
 document.getElementById('close-cart').addEventListener('click', closeCart);
 document.getElementById('cart-overlay').addEventListener('click', closeCart);
 
+/* ── DEEP LINKING ─────────────────────────────────────────── */
+function slugify(str) {
+  return str.toLowerCase()
+    .normalize('NFD').replace(/[̀-ͯ]/g, '')
+    .replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+}
+
+function setProductHash(product, flavor) {
+  const base = product.id || slugify(product.name);
+  const hash = flavor ? `${base}/${slugify(flavor)}` : base;
+  history.replaceState(null, '', `#${hash}`);
+}
+
+function clearProductHash() {
+  history.replaceState(null, '', window.location.pathname + window.location.search);
+}
+
+function openProductFromHash() {
+  const hash = window.location.hash.replace('#', '');
+  if (!hash) return;
+  const parts = hash.split('/');
+  const productId = parts[0];
+  const flavorSlug = parts[1] || '';
+
+  const product = PRODUCTS.find(p => (p.id || slugify(p.name)) === productId);
+  if (!product) return;
+
+  const flavor = flavorSlug
+    ? product.flavors.find(f => slugify(f) === flavorSlug) || product.flavors[0]
+    : product.flavors[0];
+
+  openProductModal(product, flavor);
+}
+
 /* ── PRODUCT MODAL ────────────────────────────────────────── */
 let currentProduct = null;
 let selectedFlavor = '';
 let modalQty = 1;
 
-function openProductModal(product) {
+function openProductModal(product, preselectedFlavor) {
   currentProduct = product;
-  selectedFlavor = product.flavors[0] || '';
+  selectedFlavor = preselectedFlavor || product.flavors[0] || '';
   modalQty = 1;
+  setProductHash(product, selectedFlavor);
 
   document.getElementById('modal-category-badge').textContent = product.categoryLabel;
   document.getElementById('modal-product-name').textContent = product.name;
@@ -580,13 +615,14 @@ function openProductModal(product) {
 
   // Images
   const mainImg = document.getElementById('modal-main-img');
-  mainImg.src = product.images[0];
+  const flavorIdx = Math.max(0, product.flavors.indexOf(selectedFlavor));
+  mainImg.src = product.images[flavorIdx] || product.images[0];
   mainImg.alt = product.name;
 
   // Flavor thumbnails
   const thumbsContainer = document.getElementById('modal-flavors');
   thumbsContainer.innerHTML = product.images.map((img, i) => `
-    <img class="modal-flavor-thumb ${i === 0 ? 'active' : ''}"
+    <img class="modal-flavor-thumb ${i === flavorIdx ? 'active' : ''}"
          src="${img}"
          alt="${product.flavors[i] || ''}"
          data-index="${i}"
@@ -637,6 +673,7 @@ function updateFlavorBtns() {
     btn.classList.toggle('active', btn.dataset.flavor === selectedFlavor);
   });
   if (currentProduct) {
+    setProductHash(currentProduct, selectedFlavor);
     const waText = `Hola Valji, me interesa: ${currentProduct.name}${selectedFlavor ? ' – ' + selectedFlavor : ''}. Tienen disponibilidad. Precio: ${currentProduct.priceLabel}`;
     document.getElementById('modal-whatsapp-btn').href = buildWALink(waText);
   }
@@ -646,6 +683,7 @@ function closeProductModal() {
   document.getElementById('product-modal-overlay').classList.remove('open');
   document.body.style.overflow = '';
   currentProduct = null;
+  clearProductHash();
 }
 
 document.getElementById('modal-close-btn').addEventListener('click', closeProductModal);
@@ -828,3 +866,7 @@ document.getElementById('apply-promo-btn').addEventListener('click', () => {
 renderProducts('all');
 updateCart();
 buildWAOrderLink();
+
+// Deep link: open product modal from URL hash on load
+setTimeout(openProductFromHash, 300);
+window.addEventListener('hashchange', openProductFromHash);
