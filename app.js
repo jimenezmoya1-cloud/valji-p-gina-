@@ -18,6 +18,23 @@ const ICON = {
   globe: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
 };
 
+const FLAVOR_COLORS = {
+  chocolate: '#6B3A2A', vainilla: '#F5E6C8', fresa: '#E85D75', mango: '#F5A623',
+  naranja: '#F5882D', limon: '#D4E157', 'fresa-sandía': '#E85D75',
+  'mango-naranja': '#F5A623', tropical: '#FFD54F', berry: '#9C27B0',
+  citrus: '#FBC02D', neutro: '#B0BEC5', mora: '#7B1FA2', banano: '#FFE082',
+  'green apple': '#8BC34A', cola: '#5D4037', lemon: '#FDD835',
+  'fruit punch': '#E91E63', grape: '#7B1FA2', 'mixed berry': '#AB47BC',
+  watermelon: '#EF5350', default: '#90A4AE',
+};
+function flavorColor(name) {
+  const key = name.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+  for (const [k, v] of Object.entries(FLAVOR_COLORS)) {
+    if (key.includes(k)) return v;
+  }
+  return FLAVOR_COLORS.default;
+}
+
 /* ── PRODUCT DATA ─────────────────────────────────────────── */
 const WHATSAPP = '50686724000';
 
@@ -717,12 +734,11 @@ function renderProducts(filter = 'all') {
       <div class="product-card-img-wrap">
         <img class="product-card-img" src="${product.images[0]}" alt="${product.name}" loading="lazy" onerror="this.src=''" />
         <span class="product-card-category">${product.categoryLabel}</span>
-        <span class="product-card-shipping"><span class="icon-inline">${ICON.truck}</span> Envio gratis</span>
       </div>
       <div class="product-card-body">
         <div class="product-card-name">${product.name}</div>
         <div class="product-card-flavors">
-          ${product.flavors.map(() => `<div class="flavor-dot" style="background:hsl(${Math.floor(Math.random() * 360)},60%,60%)"></div>`).join('')}
+          ${product.flavors.map(f => `<div class="flavor-dot" style="background:${flavorColor(f)}"></div>`).join('')}
           <span style="font-size:0.78rem;color:var(--text-muted);margin-left:4px">${product.flavors.length} sabor${product.flavors.length > 1 ? 'es' : ''}</span>
         </div>
         <div class="product-card-price">${product.priceLabel}</div>
@@ -788,23 +804,6 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   });
 });
 
-/* ── HERO PARTICLES ───────────────────────────────────────── */
-(function createParticles() {
-  const container = document.getElementById('hero-particles');
-  for (let i = 0; i < 20; i++) {
-    const p = document.createElement('div');
-    p.className = 'particle';
-    const size = Math.random() * 4 + 2;
-    p.style.cssText = `
-      width:${size}px;height:${size}px;
-      left:${Math.random() * 100}%;
-      animation-duration:${Math.random() * 12 + 8}s;
-      animation-delay:${Math.random() * 10}s;
-      opacity:${Math.random() * 0.6 + 0.2};
-    `;
-    container.appendChild(p);
-  }
-})();
 
 /* ── INTERSECTION OBSERVER (scroll reveal) ────────────────── */
 const revealObserver = new IntersectionObserver((entries) => {
