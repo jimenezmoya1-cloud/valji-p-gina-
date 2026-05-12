@@ -24,7 +24,10 @@
   --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.04);
   --shadow-glass: 0 8px 32px rgba(0, 0, 0, 0.06);
-  --transition: 0.3s ease;
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --transition: 0.2s var(--ease-out);
   --font: 'Outfit', sans-serif;
   --font-body: 'Inter', sans-serif;
   --glass-bg: rgba(255, 255, 255, 0.55);
@@ -129,13 +132,13 @@ ul {
   font-weight: 700;
   font-size: 1rem;
   border-radius: 50px;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
   border: none;
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(0, 196, 255, 0.35);
+.btn-primary:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
 }
 
 .btn-outline-hero {
@@ -150,12 +153,12 @@ ul {
   font-size: 1rem;
   border-radius: 50px;
   backdrop-filter: blur(8px);
-  transition: border-color var(--transition), background var(--transition);
+  transition: border-color 0.2s var(--ease-out), background 0.2s var(--ease-out), transform 0.2s var(--ease-out);
 }
 
-.btn-outline-hero:hover {
-  border-color: var(--wa-green);
-  background: rgba(37, 211, 102, 0.1);
+.btn-outline-hero:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
 }
 
 .btn-whatsapp-large {
@@ -169,12 +172,12 @@ ul {
   font-weight: 700;
   font-size: 1.05rem;
   border-radius: 50px;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
 
-.btn-whatsapp-large:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 36px rgba(37, 211, 102, 0.35);
+.btn-whatsapp-large:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
 }
 
 /* ── FLOATING WHATSAPP ────────────────────────────────────── */
@@ -193,9 +196,10 @@ ul {
   transition: transform 0.2s;
 }
 
-#whatsapp-float:hover {
-  transform: scale(1.12);
+#whatsapp-float:active {
+  transform: scale(0.95);
   animation: none;
+  transition: transform 0.1s var(--ease-out);
 }
 
 #whatsapp-float svg {
@@ -224,15 +228,8 @@ ul {
 }
 
 @keyframes wa-pulse {
-
-  0%,
-  100% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.08);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
 }
 
 /* ── NAVBAR ───────────────────────────────────────────────── */
@@ -410,7 +407,7 @@ ul {
   z-index: 2001;
   display: flex;
   flex-direction: column;
-  transition: right 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition: right 0.35s var(--ease-drawer);
   box-shadow: -12px 0 60px rgba(0, 0, 0, 0.12);
 }
 
@@ -654,12 +651,12 @@ ul {
   font-size: 1rem;
   font-weight: 700;
   border-radius: 12px;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
 }
 
-.btn-whatsapp-order:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+.btn-whatsapp-order:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
 }
 
 /* ── HERO ─────────────────────────────────────────────────── */
@@ -877,7 +874,11 @@ ul {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s ease;
+  transition: color 0.2s var(--ease-out), background 0.2s var(--ease-out), border-color 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+
+.filter-tab:active {
+  transform: scale(0.96);
 }
 
 .filter-tab:hover {
@@ -909,22 +910,15 @@ ul {
   border-radius: var(--radius-lg);
   overflow: hidden;
   cursor: pointer;
-  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease, border-color 0.35s ease, background 0.35s ease;
+  transition: transform 0.25s var(--ease-out), box-shadow 0.25s var(--ease-out), border-color 0.25s var(--ease-out), background 0.25s var(--ease-out);
   position: relative;
   display: flex;
   flex-direction: column;
   will-change: transform;
 }
 
-.product-card:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 60px rgba(0, 112, 243, 0.12), 0 8px 24px rgba(0, 196, 255, 0.08);
-  border-color: var(--border-glow);
-  background: var(--bg-card-hover);
-}
-
 .product-card:active {
-  transform: translateY(-2px) scale(0.98);
+  transform: scale(0.97);
   transition-duration: 0.1s;
 }
 
@@ -947,11 +941,7 @@ ul {
   width: 85%;
   height: 85%;
   object-fit: contain;
-  transition: transform 0.45s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.product-card:hover .product-card-img {
-  transform: scale(1.08);
+  transition: transform 0.25s var(--ease-out);
 }
 
 .product-card-img-wrap::after {
@@ -960,12 +950,53 @@ ul {
   inset: 0;
   background: linear-gradient(180deg, transparent 60%, rgba(0, 112, 243, 0.04) 100%);
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.25s var(--ease-out);
   pointer-events: none;
 }
 
-.product-card:hover .product-card-img-wrap::after {
-  opacity: 1;
+@media (hover: hover) and (pointer: fine) {
+  .product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 60px rgba(0, 112, 243, 0.12), 0 8px 24px rgba(0, 196, 255, 0.08);
+    border-color: var(--border-glow);
+    background: var(--bg-card-hover);
+  }
+
+  .product-card:hover .product-card-img {
+    transform: scale(1.05);
+  }
+
+  .product-card:hover .product-card-img-wrap::after {
+    opacity: 1;
+  }
+
+  .product-card:hover .btn-card-details {
+    background: rgba(0, 112, 243, 0.12);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(0, 196, 255, 0.35);
+  }
+
+  .btn-whatsapp-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 36px rgba(37, 211, 102, 0.35);
+  }
+
+  .btn-whatsapp-order:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+  }
+
+  .btn-card-wa:hover {
+    background: rgba(37, 211, 102, 0.22);
+    transform: scale(1.05);
+  }
+
+  .modal-flavor-thumb:hover {
+    transform: scale(1.05);
+  }
 }
 
 .product-card-category {
@@ -1066,10 +1097,6 @@ ul {
   gap: 0.4rem;
 }
 
-.product-card:hover .btn-card-details {
-  background: rgba(0, 112, 243, 0.12);
-}
-
 .btn-card-wa {
   padding: 0.65rem 0.9rem;
   background: rgba(37, 211, 102, 0.08);
@@ -1080,22 +1107,22 @@ ul {
   transition: background 0.25s ease, transform 0.25s ease;
 }
 
-.btn-card-wa:hover {
-  background: rgba(37, 211, 102, 0.22);
-  transform: scale(1.08);
+.btn-card-wa:active {
+  transform: scale(0.95);
+  transition-duration: 0.1s;
 }
 
-/* Card animations */
+/* Card entrance */
 .product-card {
   opacity: 0;
-  transform: translateY(30px) scale(0.97);
-  animation: card-in 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transform: translateY(16px);
+  animation: card-in 0.4s var(--ease-out) forwards;
 }
 
 @keyframes card-in {
   to {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateY(0);
   }
 }
 
@@ -1133,8 +1160,8 @@ ul {
   overflow-y: auto;
   position: relative;
   padding: 2rem;
-  transform: scale(0.92) translateY(20px);
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.35s ease;
+  transform: scale(0.96) translateY(12px);
+  transition: transform 0.3s var(--ease-out), opacity 0.25s var(--ease-out);
   opacity: 0;
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.12), 0 0 0 1px rgba(255, 255, 255, 0.5) inset;
 }
@@ -1199,8 +1226,9 @@ ul {
   transition: border-color var(--transition), transform var(--transition);
 }
 
-.modal-flavor-thumb:hover {
-  transform: scale(1.08);
+.modal-flavor-thumb:active {
+  transform: scale(0.95);
+  transition-duration: 0.1s;
 }
 
 .modal-flavor-thumb.active {
@@ -1294,7 +1322,7 @@ ul {
   color: var(--text-muted);
   font-size: 0.82rem;
   font-weight: 600;
-  transition: all var(--transition);
+  transition: color 0.15s var(--ease-out), background 0.15s var(--ease-out), border-color 0.15s var(--ease-out);
   cursor: pointer;
 }
 
@@ -1362,7 +1390,12 @@ ul {
   font-weight: 700;
   border-radius: 12px;
   margin-bottom: 0.7rem;
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
+}
+
+.btn-add-cart:active {
+  transform: scale(0.97);
+  transition-duration: 0.1s;
 }
 
 .btn-add-cart:hover {
@@ -2316,20 +2349,16 @@ body {
   font-weight: 700;
   border-radius: 10px;
   cursor: pointer;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.2s var(--ease-out), box-shadow 0.2s var(--ease-out);
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.4rem;
 }
 
-.btn-card-quickadd:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 112, 243, 0.25);
-}
-
 .btn-card-quickadd:active {
-  transform: scale(0.96);
+  transform: scale(0.97);
+  transition-duration: 0.1s;
 }
 
 /* ── REDUCED MOTION ──────────────────────────────────────── */

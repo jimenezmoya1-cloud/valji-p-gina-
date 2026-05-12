@@ -773,7 +773,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.style.opacity = '1';
-      entry.target.style.transform = 'translateY(0) scale(1)';
+      entry.target.style.transform = 'translateY(0)';
       revealObserver.unobserve(entry.target);
     }
   });
@@ -781,8 +781,8 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 document.querySelectorAll('.stat-card, .trust-item, .faq-item, .about-feature, .contact-item').forEach((el, i) => {
   el.style.opacity = '0';
-  el.style.transform = 'translateY(24px) scale(0.97)';
-  el.style.transition = `opacity 0.6s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.06}s, transform 0.6s cubic-bezier(0.34,1.56,0.64,1) ${i * 0.06}s`;
+  el.style.transform = 'translateY(12px)';
+  el.style.transition = `opacity 0.4s cubic-bezier(0.23,1,0.32,1) ${i * 0.05}s, transform 0.4s cubic-bezier(0.23,1,0.32,1) ${i * 0.05}s`;
   revealObserver.observe(el);
 });
 
