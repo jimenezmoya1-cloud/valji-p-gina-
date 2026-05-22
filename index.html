@@ -10,7 +10,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Figtree:wght@300;400;500;600;700&display=swap"
     rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -34,7 +34,7 @@
   <div id="cart-overlay" class="cart-overlay"></div>
   <aside id="cart-sidebar" class="cart-sidebar">
     <div class="cart-header">
-      <h3>🛒 Tu Carrito</h3>
+      <h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg> Tu Carrito</h3>
       <button id="close-cart" class="close-cart" aria-label="Cerrar carrito">&times;</button>
     </div>
     <div id="cart-items" class="cart-items">
@@ -42,6 +42,7 @@
     </div>
     <div class="cart-footer">
       <div class="cart-promo-code">
+        <label for="promo-code-input" class="visually-hidden">Código promocional</label>
         <input type="text" id="promo-code-input" placeholder="Código promocional" />
         <button id="apply-promo-btn">Aplicar</button>
       </div>
@@ -66,7 +67,7 @@
         </div>
       </div>
 
-      <div class="free-shipping-badge">🚚 Envío GRATIS a nivel nacional</div>
+      <div class="free-shipping-badge"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-2px"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg> Envio GRATIS a nivel nacional</div>
       <a id="whatsapp-order-btn" href="#" target="_blank" class="btn-whatsapp-order">
         <svg width="22" height="22" viewBox="0 0 32 32" fill="none">
           <circle cx="16" cy="16" r="16" fill="#25D366" />
@@ -82,7 +83,7 @@
   <!-- ===== PRODUCT MODAL ===== -->
   <div id="product-modal-overlay" class="modal-overlay">
     <div id="product-modal" class="product-modal">
-      <button class="modal-close" id="modal-close-btn">&times;</button>
+      <button class="modal-close" id="modal-close-btn" aria-label="Cerrar">&times;</button>
       <div class="modal-content">
         <div class="modal-gallery">
           <img id="modal-main-img" src="" alt="Producto" />
@@ -92,7 +93,6 @@
           <span id="modal-category-badge" class="modal-category-badge"></span>
           <h2 id="modal-product-name"></h2>
           <div id="modal-price" class="modal-price"></div>
-          <div id="modal-free-shipping" class="modal-free-shipping">🚚 Envío GRATIS a nivel nacional</div>
           <div id="modal-description" class="modal-description"></div>
           <div id="modal-benefits" class="modal-benefits"></div>
           <div id="modal-flavor-selector" class="modal-flavor-selector">
@@ -107,7 +107,7 @@
               <button id="qty-plus" class="qty-btn">+</button>
             </div>
           </div>
-          <button id="modal-add-cart" class="btn-add-cart">🛒 Agregar al Carrito</button>
+          <button id="modal-add-cart" class="btn-add-cart"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg> Agregar al Carrito</button>
           <a id="modal-whatsapp-btn" href="#" target="_blank" class="btn-whatsapp-direct">
             <svg width="18" height="18" viewBox="0 0 32 32" fill="none">
               <circle cx="16" cy="16" r="16" fill="#25D366" />
@@ -145,7 +145,8 @@
           WhatsApp
         </a>
         <button id="cart-btn" class="cart-btn" aria-label="Carrito">
-          🛒 <span id="cart-count" class="cart-count">0</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>
+          <span id="cart-count" class="cart-count">0</span>
         </button>
         <button class="hamburger" id="hamburger" aria-label="Menú">
           <span></span><span></span><span></span>
@@ -165,7 +166,7 @@
         <p class="hero-subtitle">PowerBar · Muscle Milk · Oikos | Para triatlonistas, ciclistas, corredores y
           deportistas
           que no conocen límites.</p>
-        <div class="hero-free-shipping">🚚 Envío GRATIS a nivel nacional en todos tus pedidos</div>
+        <div class="hero-free-shipping"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align:-3px"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg> Envio GRATIS a nivel nacional en todos tus pedidos</div>
         <div class="hero-ctas">
           <a href="#productos" class="btn-primary">Ver Catálogo</a>
           <a href="https://wa.me/50686724000?text=Hola%20Valji%2C%20quiero%20conocer%20sus%20productos%20y%20precios."
@@ -181,7 +182,7 @@
         </div>
       </div>
       <div class="hero-image-content fade-in">
-        <img src="assets/img/main/facebook-image.jpg" alt="Valji Nutrición" class="hero-main-img" />
+        <img src="assets/img/main/facebook-image.jpg" alt="Valji Nutricion" class="hero-main-img" width="600" height="600" />
       </div>
     </div>
     <div class="hero-scroll-indicator">
@@ -194,23 +195,23 @@
   <section class="trust-bar">
     <div class="trust-container">
       <div class="trust-item">
-        <span class="trust-icon">🏆</span>
+        <span class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
         <span>+29 años de experiencia</span>
       </div>
       <div class="trust-item">
-        <span class="trust-icon">🚚</span>
-        <span>Envío gratis nacional</span>
+        <span class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span>
+        <span>Cologne List certificado</span>
       </div>
       <div class="trust-item">
-        <span class="trust-icon">⚡</span>
+        <span class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span>
         <span>Marcas exclusivas</span>
       </div>
       <div class="trust-item">
-        <span class="trust-icon">🇨🇷</span>
+        <span class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
         <span>Empresa costarricense</span>
       </div>
       <div class="trust-item">
-        <span class="trust-icon">🌿</span>
+        <span class="trust-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 20 2 20 2s-3 5.5-5 11.2A7 7 0 0 1 11 20z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></span>
         <span>Carbono neutro</span>
       </div>
     </div>
@@ -249,21 +250,21 @@
         <h2 class="section-title">Una empresa que<br /><span class="gradient-text">vive el deporte</span></h2>
         <div class="about-features">
           <div class="about-feature fade-in" style="animation-delay: 0.1s;">
-            <span class="about-feature-icon">🏅</span>
+            <span class="about-feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"/><path d="M11 12 5.12 2.2"/><path d="m13 12 5.88-9.8"/><path d="M8 7h8"/><circle cx="12" cy="17" r="5"/><path d="M12 18v-2h-.5"/></svg></span>
             <div>
               <strong>Líderes desde 1997</strong>
               <p>Traemos a Costa Rica la mejor nutrición deportiva a nivel mundial.</p>
             </div>
           </div>
           <div class="about-feature fade-in" style="animation-delay: 0.2s;">
-            <span class="about-feature-icon">🚴</span>
+            <span class="about-feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18.5" cy="17.5" r="3.5"/><circle cx="5.5" cy="17.5" r="3.5"/><circle cx="15" cy="5" r="1"/><path d="M12 17.5V14l-3-3 4-3 2 3h2"/></svg></span>
             <div>
               <strong>Tu aliado estratégico</strong>
               <p>Acompañamos a triatlonistas, ciclistas y corredores a lograr sus metas de manera profesional.</p>
             </div>
           </div>
           <div class="about-feature fade-in" style="animation-delay: 0.3s;">
-            <span class="about-feature-icon">✅</span>
+            <span class="about-feature-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg></span>
             <div>
               <strong>Calidad y Seguridad</strong>
               <p>Valji cumple con estrictas regulaciones para cuidar tu salud y garantizar excelencia en nutrición y
@@ -289,12 +290,12 @@
             <div class="stat-label">costarricense</div>
           </div>
           <div class="stat-card">
-            <div class="stat-number">🌿</div>
+            <div class="stat-number"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--accent-3)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.9C15.5 4.9 20 2 20 2s-3 5.5-5 11.2A7 7 0 0 1 11 20z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg></div>
             <div class="stat-label">carbono neutro</div>
           </div>
         </div>
         <div class="about-extra-img">
-          <img src="assets/img/nuevas/facebook-image-1-.jpg" alt="Atleta Valji" class="distributed-img" />
+          <img src="assets/img/nuevas/facebook-image-1-.jpg" alt="Atleta Valji" class="distributed-img" width="550" height="550" />
         </div>
       </div>
     </div>
@@ -303,23 +304,10 @@
   <!-- ===== BANNER DISTRIBUIDO ===== -->
   <section class="banner-section fade-in">
     <div class="banner-container">
-      <img src="assets/img/nuevas/energy-bars-web-banner.webp" alt="Energy Bars" class="distributed-banner" />
+      <img src="assets/img/nuevas/energy-bars-web-banner.webp" alt="Energy Bars" class="distributed-banner" width="1320" height="400" />
     </div>
   </section>
 
-  <!-- ===== FREE SHIPPING BANNER ===== -->
-  <section class="shipping-banner">
-    <div class="shipping-banner-inner">
-      <div class="shipping-icon">🚚</div>
-      <div>
-        <h3>Envío GRATUITO a todo Costa Rica</h3>
-        <p>Realizá tu pedido por WhatsApp y lo recibís en tu puerta sin costo adicional, sin importar en qué parte del
-          país estés.</p>
-      </div>
-      <a href="https://wa.me/50686724000?text=Hola%20Valji%2C%20quiero%20hacer%20un%20pedido." target="_blank"
-        class="btn-primary" id="shipping-wa-btn">Hacer pedido</a>
-    </div>
-  </section>
 
   <!-- ===== FAQ ===== -->
   <section id="faq" class="faq-section">
@@ -437,24 +425,24 @@
         </p>
         <div class="contact-details">
           <div class="contact-item">
-            <span>📱</span>
+            <span class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
             <div>
               <strong>WhatsApp</strong>
               <span>8672-4000</span>
             </div>
           </div>
           <div class="contact-item">
-            <span>🇨🇷</span>
+            <span class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg></span>
             <div>
               <strong>Cobertura</strong>
               <span>Todo Costa Rica</span>
             </div>
           </div>
           <div class="contact-item">
-            <span>🚚</span>
+            <span class="contact-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></span>
             <div>
-              <strong>Envío</strong>
-              <span>Gratis a nivel nacional</span>
+              <strong>Horario</strong>
+              <span>Lun-Sab, 8am-6pm</span>
             </div>
           </div>
         </div>
@@ -477,7 +465,7 @@
   <!-- ===== SINPE ANNOUNCEMENT ===== -->
   <div class="sinpe-announcement">
     <div class="sinpe-content">
-      <span class="sinpe-icon">📱</span>
+      <span class="sinpe-icon"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></span>
       <span class="sinpe-text">SINPE MÓVIL AL <strong>8672-4000</strong></span>
     </div>
   </div>
@@ -491,20 +479,20 @@
           <p>Distribuidora Valji S.A.<br />Nutrición deportiva premium<br />para Costa Rica desde 1997.</p>
         </div>
         <div class="footer-links">
-          <h4>Catálogo</h4>
+          <h3>Catálogo</h3>
           <a href="#productos" onclick="filterByCategory('proteinas')">Proteínas</a>
           <a href="#productos" onclick="filterByCategory('geles')">PowerGel</a>
           <a href="#productos" onclick="filterByCategory('electrolitos')">Electrolitos</a>
           <a href="#productos" onclick="filterByCategory('barras')">Barras</a>
         </div>
         <div class="footer-links">
-          <h4>Empresa</h4>
+          <h3>Empresa</h3>
           <a href="#quienes-somos">Nosotros</a>
           <a href="#faq">Preguntas Frecuentes</a>
           <a href="#contacto">Contacto</a>
         </div>
         <div class="footer-links">
-          <h4>Contacto</h4>
+          <h3>Contacto</h3>
           <a href="https://wa.me/50686724000" target="_blank">WhatsApp: 8672-4000</a>
           <p style="color:var(--text-muted);font-size:0.85rem;margin-top:0.5rem">Envío gratis a nivel nacional</p>
         </div>
@@ -515,7 +503,7 @@
           <img src="assets/img/nuevooo/untitled-design-310x438.png" alt="PYME" class="footer-badge-sm" />
           <img src="assets/img/nuevooo/carbono-neutral-costa-rica.webp" alt="Carbono Neutro" class="footer-badge-sm" />
         </div>
-        <p class="footer-copyright">© 2025 Distribuidora Valji S.A. · Todos los derechos reservados · Costa Rica</p>
+        <p class="footer-copyright">© 2026 Distribuidora Valji S.A. · Todos los derechos reservados · Costa Rica</p>
       </div>
     </div>
   </footer>
