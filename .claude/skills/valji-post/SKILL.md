@@ -112,7 +112,7 @@ Antes de guardar el paquete, verificar que cumple todas estas condiciones. Si al
 
 **`valji-marketing/posts/` está vacío.** Es la primera corrida. Empezar por el pilar "producto directo" sin restricción de no-repetir. Elegir el producto más representativo del catálogo según el contexto actual (temporada, calendario deportivo, producto estrella).
 
-**Instagram bloquea el acceso automático.** El comportamiento normal. No detener la rutina. Usar la sección 8 de `MARCA.md` como snapshot del canal y el historial de `valji-marketing/posts/` para inferir el contexto. Hacer UNA sola pregunta al usuario sobre publicaciones recientes y continuar con la respuesta que dé — o con "sin datos recientes" si el usuario prefiere omitir.
+**Instagram bloquea el acceso automático.** El comportamiento normal. No detener la rutina. Usar la sección 8 de `MARCA.md` como snapshot del canal y el historial de `valji-marketing/posts/` para inferir el contexto. Si la sección 8 todavía es la plantilla sin completar, inferir el contexto de las secciones 1-7 de `MARCA.md`. En la primera corrida (`posts/` vacío) no hace falta preguntar nada: seguí directo. En las demás corridas, hacer UNA sola pregunta al usuario sobre publicaciones recientes y continuar con la respuesta que dé — o con "sin datos recientes" si el usuario prefiere omitir.
 
 ---
 
