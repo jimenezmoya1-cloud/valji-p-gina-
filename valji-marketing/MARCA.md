@@ -1,8 +1,8 @@
 # MARCA.md — Documento maestro de Valji
 
 Este es el "cerebro de marca" de Valji. La rutina `/valji-post` lo lee en cada
-corrida. Mantenelo actualizado: si algo cambia (precios, productos, promos),
-editá este archivo.
+corrida. Mantenelo actualizado: si algo cambia (precios, productos, promos,
+años de trayectoria), editá este archivo.
 
 Última actualización: 2026-05-21
 
@@ -16,7 +16,7 @@ Distribuidora Valji S.A. es la empresa costarricense que distribuye en exclusiva
 
 ### Historia y trayectoria
 
-Valji opera desde 1997 — más de 27 años en el mercado costarricense. Nació con la convicción de que los deportistas de Costa Rica merecen acceso a la misma nutrición que usan los atletas de élite a nivel mundial. Es una empresa 100% costarricense, clasificada como PYME, con certificación de carbono neutro. Su permanencia y crecimiento en un mercado exigente son la mejor prueba de su propuesta.
+Valji opera desde 1997 — más de 29 años en el mercado costarricense. Nació con la convicción de que los deportistas de Costa Rica merecen acceso a la misma nutrición que usan los atletas de élite a nivel mundial. Es una empresa 100% costarricense, clasificada como PYME, con certificación de carbono neutro. Su permanencia y crecimiento en un mercado exigente son la mejor prueba de su propuesta.
 
 ### Propósito
 
@@ -28,7 +28,7 @@ Valji es el distribuidor exclusivo de PowerBar, Muscle Milk y Oikos en Costa Ric
 
 ### Posicionamiento
 
-Premium. Valji no compite por precio con tiendas genéricas. Compite por calidad, exclusividad, confianza y 27 años de trayectoria. El cliente de Valji es alguien que ya sabe lo que busca y entiende que la nutrición correcta no es un gasto, sino una inversión en rendimiento.
+Premium. Valji no compite por precio con tiendas genéricas. Compite por calidad, exclusividad, confianza y 29 años de trayectoria. El cliente de Valji es alguien que ya sabe lo que busca y entiende que la nutrición correcta no es un gasto, sino una inversión en rendimiento.
 
 ### Frase de marca
 
@@ -78,7 +78,7 @@ El cliente de Valji es adulto (principalmente 25-50 años), de clase media-alta 
 
 ### Segmento profesional (Aliados)
 
-Nutricionistas, entrenadores personales y clubes deportivos que recomiendan o revenden productos Valji. Tienen acceso a **códigos de aliados** (COACHVALJI, GYMVALJI, NUTRIVALJI, ALIADOSVALJI) con un 23% de descuento. Para ellos, Valji es un proveedor confiable, no solo un punto de venta: la exclusividad de las marcas y el respaldo de 27 años son argumentos sólidos frente a sus clientes.
+Nutricionistas, entrenadores personales y clubes deportivos que recomiendan o revenden productos Valji. Tienen acceso a **códigos de aliados** (COACHVALJI, GYMVALJI, NUTRIVALJI, ALIADOSVALJI) con un 23% de descuento. Para ellos, Valji es un proveedor confiable, no solo un punto de venta: la exclusividad de las marcas y el respaldo de 29 años son argumentos sólidos frente a sus clientes.
 
 ---
 
@@ -244,7 +244,7 @@ El resultado debe verse como si lo hubiera ensamblado un maestro artesano en hor
 Valji habla con cuatro cualidades simultáneas:
 
 - **Premium:** la voz refleja que los productos son de la más alta calidad mundial. No hay disculpas, no hay descuentos de autoestima.
-- **Experto:** Valji lleva más de 27 años en nutrición deportiva. La voz conoce la ciencia (C2MAX, Cologne List®, NSF Certified for Sport) y la usa con naturalidad, sin sonar pedante.
+- **Experto:** Valji lleva más de 29 años en nutrición deportiva. La voz conoce la ciencia (C2MAX, Cologne List®, NSF Certified for Sport) y la usa con naturalidad, sin sonar pedante.
 - **Motivador:** el tono empuja. Habla al atleta que ya está comprometido y lo impulsa a dar el siguiente paso, no a convencerlo de que el deporte vale la pena.
 - **Cercano:** es una empresa costarricense. Habla como habla un tico de alta educación: con calidez, sin formalidad excesiva, con voseo natural.
 
@@ -288,7 +288,7 @@ Uso esparso y funcional, no decorativo. Un emoji como marcador visual está bien
 ### Ejemplos on-brand
 
 **Ejemplo 1 — Post de producto:**
-> "El Fuel Gel 30 lleva el mismo ratio 1:0,8 glucosa-fructosa que usan los triatlonistas en Kona. Vos no tenés que pedalear el Tour para entrenarte con las mismas herramientas. Pedilo esta semana."
+> "El Fuel 30 Gel lleva el mismo ratio 1:0,8 glucosa-fructosa que usan los triatlonistas en Kona. Vos no tenés que pedalear el Tour para entrenarte con las mismas herramientas. Pedilo esta semana."
 
 **Ejemplo 2 — Caption de carrusel educativo:**
 > "En clima tropical sudás más de lo que sentís. El calor y la humedad combinados aceleran la pérdida de sodio y potasio sin que el cuerpo mande la señal de sed. Anticipá la hidratación, no la corrijás cuando ya llegó el calambre."
@@ -349,9 +349,9 @@ En estos casos, el call to action es "pedilo en valjicr.com" o "usá el código 
 
 Estos son los sellos y argumentos que respaldan a Valji ante un cliente nuevo o escéptico. No son adornos: son razones concretas para comprar. Usarlos con precisión, no como lista decorativa.
 
-### +27 años en el mercado costarricense
+### +29 años en el mercado costarricense
 
-Valji opera desde 1997. En un mercado donde abren y cierran distribuidoras de suplementos cada año, 27 años de continuidad son una declaración de solidez. El mensaje implícito: si no funcionara, ya no existiría. Argumentar de esta forma cuando el cliente cuestiona la confiabilidad o compara con tiendas nuevas.
+Valji opera desde 1997. En un mercado donde abren y cierran distribuidoras de suplementos cada año, 29 años de continuidad son una declaración de solidez. El mensaje implícito: si no funcionara, ya no existiría. Argumentar de esta forma cuando el cliente cuestiona la confiabilidad o compara con tiendas nuevas.
 
 ### 100% costarricense
 
@@ -388,7 +388,7 @@ PowerGel Original e Iso Fuel 30 son aptos para veganos. En el segmento deportivo
 No mezclar todos los sellos en un solo post. Elegir el argumento que conecta con el perfil del cliente al que habla ese post específico:
 
 - Post de gel para triatlonista federado → Cologne List®, distribuidor exclusivo.
-- Post de creatina para atleta de CrossFit → NSF Certified for Sport, 27 años de trayectoria.
+- Post de creatina para atleta de CrossFit → NSF Certified for Sport, 29 años de trayectoria.
 - Post de empresa / fecha patria / aniversario → 100% costarricense, carbono neutro, PYME.
 - Post de comparativa de precio → distribuidor exclusivo (autenticidad > precio).
 
@@ -507,9 +507,9 @@ Lista editable. Agregar, mover o eliminar eventos según el año. Fuentes: FEUTR
 
 **Diciembre**
 - Marathon San José Costa Rica (6 de diciembre) — 5K, 10K, 21K, 42K, Estadio Nacional.
-- Temporada de cierre de temporada / off-season: ideal para promos `OFFSEASON`, `NOPARA30`.
+- Cierre de temporada / off-season: ideal para promos `OFFSEASON`, `NOPARA30`.
 
-_(Agregar aquí eventos de MTB de la Serie CR MTB, Vuelta a Costa Rica, y otros que se confirmen cada año)_
+**Nota editable:** agregá cada año los eventos de MTB (Serie CR MTB), la Vuelta a Costa Rica y otras competencias que se confirmen.
 
 ---
 
