@@ -265,7 +265,7 @@ El primer comentario del post (publicado por la cuenta de Valji inmediatamente d
 
 Si el caption es largo o el diseño visual del texto importa, publicá el caption limpio (sin hashtags) y en el primer comentario pegá el bloque completo de hashtags.
 
-Ventaja: el caption se lee mejor. Instagram trata los hashtags en el primer comentario igual que los del caption para alcance.
+Ventaja: el caption se lee más limpio. Nota: hoy Instagram da más peso a los hashtags que van en el caption, así que si movés el bloque al primer comentario, dejá igual 3-5 hashtags clave dentro del caption.
 
 ### Opción B — CTA secundario
 
