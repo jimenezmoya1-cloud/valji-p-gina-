@@ -179,7 +179,7 @@ Antes de lanzar una promo de 30% o 40%, hacer el cálculo con el costo del produ
 
 ### 5.4 Una sola promo fuerte a la vez
 
-Valji no es una tienda de liquidaciones. Lanzar dos promos simultáneas o codigos apilados confunde al cliente y diluye el mensaje. Si hay una campaña activa, esperá a que cierre para lanzar la siguiente.
+Valji no es una tienda de liquidaciones. Lanzar dos promos simultáneas o códigos apilados confunde al cliente y diluye el mensaje. Si hay una campaña activa, esperá a que cierre para lanzar la siguiente.
 
 ### 5.5 El envío ya es gratis — no usarlo como gancho
 

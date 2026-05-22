@@ -223,7 +223,7 @@ Textura: sudor real visible en el dorso de la mano que sostiene el gel. El maill
 
 Mood: épico y silencioso, el instante de fuerzas reunidas antes de una subida larga. Concentración pura. Sin sonrisa, sin pose — es un momento real dentro de un esfuerzo real.
 
-Paleta de color: dominante negro azulado (`#0F172A`) en el asfalto y cielo pre-amanecer, con acento naranja dorado de la luz de hora dorada. El empaque del PowerGel mantiene sus colores originales de la referencia. Máximo tres colores dominantes más el acento.
+Paleta de color: dominante negro azulado en el asfalto y cielo pre-amanecer, con acento naranja dorado de la luz de hora dorada. El empaque del PowerGel mantiene sus colores originales de la referencia. Máximo tres colores dominantes más el acento.
 
 Composición: producto en el tercio central-derecho del frame. El ciclista llena el encuadre en diagonal, con espacio negativo en el tercio superior izquierdo (cielo y neblina) donde eventualmente irá texto superpuesto en postproducción. Encuadre horizontal ligeramente rotado 3° en sentido de la dirección del ciclista para dar dinamismo.
 
