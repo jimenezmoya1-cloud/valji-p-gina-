@@ -188,7 +188,7 @@ const PRODUCTS = [
   },
   {
     id: 'powergel-smoothies',
-    name: 'PowerGel Smothies 16U',
+    name: 'PowerGel Smoothies 16U',
     category: 'geles',
     categoryLabel: 'PowerGel',
     price: 28340,
