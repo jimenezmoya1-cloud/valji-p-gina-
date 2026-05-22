@@ -231,7 +231,7 @@ Cadence Editorial es el sistema visual que rige todos los posts de Instagram de 
 
 5. **Márgenes generosos e idénticos.** 70–80px de padding en todos lados en cada slide. El carrusel lee como una sola pieza editorial continua, no como cinco afiches desconectados. El ritmo vertical hace que el trabajo se sienta inevitable.
 
-6. **Texturas de grano.** Una capa sutil de noise (opacidad 4–7%, `mix-blend-mode: overlay` o `multiply`) sobre los fondos sólidos da profundidad analógica y evita la planitud digital. Invisible a primera vista; notaria si faltara.
+6. **Texturas de grano.** Una capa sutil de noise (opacidad 4–7%, `mix-blend-mode: overlay` o `multiply`) sobre los fondos sólidos da profundidad analógica y evita la planitud digital. Invisible a primera vista; notoria si faltara.
 
 El resultado debe verse como si lo hubiera ensamblado un maestro artesano en horas tranquilas: cada línea con intención, cada gap medido, cada alineación verificada dos veces.
 
@@ -302,3 +302,232 @@ Uso esparso y funcional, no decorativo. Un emoji como marcador visual está bien
 
 **Ejemplo 2 — Promesas médicas / jerga vacía:**
 > "Nuestras proteínas te ayudan a quemar grasa y ganar músculo al mismo tiempo. Resultados garantizados o te devolvemos el dinero. Ponete fit con Valji."
+
+---
+
+## 6. Canales y rutas de venta
+
+### Canales activos
+
+| Canal | Detalle |
+|---|---|
+| **WhatsApp** | 8672-4000 — [wa.me/50686724000](https://wa.me/50686724000). Canal principal de atención y cierre de ventas. Respuesta rápida, asesoría personalizada, envío del link de pago. |
+| **SINPE Móvil** | 8672-4000. Método de pago por excelencia en el mercado costarricense. El cliente paga y envía el comprobante por WhatsApp. |
+| **Sitio web** | [valjicr.com](https://valjicr.com). Carrito de compras completo: el cliente elige productos, aplica un código promocional, y envía el pedido directamente por WhatsApp con el detalle armado. Funciona como vitrina de catálogo 24/7. |
+| **Envío** | Gratis a nivel nacional. Sin condición de monto mínimo. Sin excepciones. |
+| **IVA** | 13% aplicado al momento del cobro. Los precios del catálogo se muestran sin IVA. |
+| **Otros métodos de pago** | Transferencia bancaria, pago contra entrega. |
+
+---
+
+### Ruta de venta según el tipo de post
+
+La elección del canal de cierre depende del contexto del post y del perfil del cliente:
+
+**Consulta directa por WhatsApp** — preferida cuando:
+- El post es de un producto específico (un gel, una proteína, un electrolito).
+- El post es educativo y el cliente puede tener preguntas antes de comprar.
+- El post invita a armar un combo, una rutina o pedir asesoría nutricional.
+- El call to action es personalizado: "escribinos", "consultanos", "pedilo hoy".
+
+En estos casos, el link correcto es `https://wa.me/50686724000`. El cliente llega con intención; el agente cierra con asesoría.
+
+**Carrito web** — preferido cuando:
+- El post muestra el catálogo completo o varias categorías.
+- El cliente ya sabe qué quiere y solo necesita el canal de compra directa.
+- El post promueve un código de descuento: mandar al cliente a valjicr.com le permite aplicarlo en el carrito antes de confirmar.
+
+En estos casos, el call to action es "pedilo en valjicr.com" o "usá el código [X] en valjicr.com".
+
+---
+
+**Regla de oro:** nunca dejar un post sin un camino de compra claro. Todo post cierra con una instrucción de acción: un link de WhatsApp, una mención al sitio, o los dos.
+
+---
+
+## 7. Pruebas de confianza
+
+Estos son los sellos y argumentos que respaldan a Valji ante un cliente nuevo o escéptico. No son adornos: son razones concretas para comprar. Usarlos con precisión, no como lista decorativa.
+
+### +27 años en el mercado costarricense
+
+Valji opera desde 1997. En un mercado donde abren y cierran distribuidoras de suplementos cada año, 27 años de continuidad son una declaración de solidez. El mensaje implícito: si no funcionara, ya no existiría. Argumentar de esta forma cuando el cliente cuestiona la confiabilidad o compara con tiendas nuevas.
+
+### 100% costarricense
+
+Distribuidora Valji S.A. es una empresa costarricense, creada por ticos, para el mercado tico. No es una franquicia ni un revendedor anónimo de plataformas genéricas. Eso significa atención local real, conocimiento del clima y las competencias del país, y compromiso con el deportista costarricense. Usar cuando la identidad nacional es un elemento de conexión con el cliente.
+
+### Carbono neutro
+
+Valji tiene certificación de carbono neutro. Relevante para el cliente consciente del impacto ambiental, especialmente en segmentos como ciclismo de montaña y running de trail donde la cultura ambiental está presente. No exagerar; mencionarlo como parte del perfil de la empresa, no como argumento central de venta.
+
+### PYME
+
+Clasificación oficial como pequeña y mediana empresa. Comunica escala humana, atención directa y relación cercana. El cliente no habla con un call center: habla con la empresa. Útil para contrastar con grandes cadenas impersonales.
+
+### Distribuidor exclusivo de PowerBar, Muscle Milk y Oikos en Costa Rica
+
+Este es el argumento más potente de diferenciación. Exclusividad significa: producto auténtico garantizado, abastecimiento directo, sin intermediarios, sin riesgo de falsificaciones o productos vencidos que llegaron por canales grises. Si querés PowerBar o Muscle Milk con respaldo real en Costa Rica, hay un solo lugar. Usar en cualquier comparativa de precio o cuando el cliente duda entre Valji y otro proveedor.
+
+### Cologne List®
+
+Base de datos internacional de referencia para atletas sometidos a controles antidopaje. Los productos PowerBar en el catálogo de Valji (geles, barras, bebidas) están certificados en esta lista, lo que garantiza ausencia de sustancias prohibidas. Argumento crítico y no negociable para triatlonistas, ciclistas y corredores que compiten en circuitos federados (FEUTRI, FECOCI, IAAF). Usar siempre que el público objetivo sea un atleta competitivo federado.
+
+### NSF Certified for Sport
+
+Certificación independiente que garantiza pureza del producto y ausencia de contaminantes. Aplica a la Creatina ProSeries de Muscle Milk. Más relevante para el segmento gym y CrossFit que compite en federaciones con controles antidopaje. NSF es el estándar que aceptan la mayoría de ligas profesionales y olímpicas en EE.UU. y Centroamérica.
+
+### Opciones veganas
+
+PowerGel Original e Iso Fuel 30 son aptos para veganos. En el segmento deportivo de alto rendimiento, el veganismo ya no es nicho: hay triatlonistas, ultramaratonistas y ciclistas que lo practican sin ceder en rendimiento. Mencionarlo cuando el perfil del cliente o el contexto del post lo hace relevante.
+
+---
+
+### Cómo usarlos en los posts
+
+No mezclar todos los sellos en un solo post. Elegir el argumento que conecta con el perfil del cliente al que habla ese post específico:
+
+- Post de gel para triatlonista federado → Cologne List®, distribuidor exclusivo.
+- Post de creatina para atleta de CrossFit → NSF Certified for Sport, 27 años de trayectoria.
+- Post de empresa / fecha patria / aniversario → 100% costarricense, carbono neutro, PYME.
+- Post de comparativa de precio → distribuidor exclusivo (autenticidad > precio).
+
+---
+
+## 8. Instagram @valjicr
+
+### Estado de la información
+
+Se intentó obtener datos del perfil @valjicr mediante búsqueda web y fetch directo de `instagram.com/valjicr`. Instagram bloqueó el acceso automatizado — no se devolvió contenido estructurado (bio, seguidores, posts). La búsqueda web tampoco arrojó resultados indexados del perfil. Esto es el comportamiento normal de Instagram ante consultas automáticas.
+
+**La sección siguiente es una plantilla intencional para completar a mano.** No es un placeholder defectuoso: es el formulario que le permite al dueño de la cuenta registrar la realidad actual del canal en este documento maestro. Una vez completada, la rutina `/valji-post` puede adaptar los posts al contexto real del perfil.
+
+---
+
+### Plantilla — completar a mano con acceso directo al perfil
+
+**Bio actual del perfil:**
+_(completar)_
+
+**Número de seguidores:**
+_(completar)_
+
+**Número de posts publicados:**
+_(completar)_
+
+**Frecuencia de publicación actual** (ej: 3 posts/semana, 1 reel/semana + 2 stories diarias):
+_(completar)_
+
+**Formato que más se publica** (ej: carruseles, reels, posts de imagen estática, mezcla):
+_(completar)_
+
+**Tres posts que mejor funcionaron** (más likes, más guardados, más DMs generados):
+
+1. _(completar — describir brevemente el post y qué métricas tuvo)_
+2. _(completar)_
+3. _(completar)_
+
+**Pilares de contenido actuales** (los temas que más aparecen en el feed):
+_(completar — ej: educación nutricional, lanzamiento de productos, motivación, testimonios, etc.)_
+
+**Errores o patrones a evitar** (basado en lo que no funcionó o no encaja con la marca):
+_(completar — ej: texto demasiado largo en imagen, fondos blancos genéricos, captions sin CTA, etc.)_
+
+**Hashtags que se están usando actualmente:**
+_(completar)_
+
+**Enlace en bio actual** (¿apunta a valjicr.com o a WhatsApp?):
+_(completar)_
+
+---
+
+### Lineamientos generales mientras no se completa la plantilla
+
+La rutina `/valji-post` puede operar con las secciones 1-7 de este documento mientras la plantilla de arriba está pendiente. Cuando se complete, los posts podrán ajustarse al contexto real del perfil (frecuencia, formato preferido, hashtags, tono confirmado del feed).
+
+---
+
+## 9. Banco de promociones e ideas
+
+### Tabla de códigos promocionales existentes
+
+Los códigos están programados en la constante `PROMO_CODES` de `app.js`. Se aplican en el carrito de `valjicr.com`.
+
+| Descuento | Códigos | Uso / notas |
+|---|---|---|
+| **5%** | `PURAELITE`, `PISTA5`, `TICOFIT`, `PODIUM5` | Descuento de entrada. Para activaciones de bajo compromiso, primera compra, o campañas de volumen. |
+| **10%** | `ELITE10`, `RECORD10`, `RÉCORD10`, `TICOSTRONG`, `SPRINT10`, `VOLTAJE10` | Descuento estándar de campaña. El más versátil para posts de temporada. |
+| **15%** | `ORO15`, `CAMPEON`, `MEDALLA15` | Descuento de reconocimiento. Ideal post-carrera, post-competencia, o para premiar a seguidores activos. |
+| **20%** | `FUEGO20`, `CUMBRE20`, `RESISTENCIA`, `VALJI20`, `JUEGOS20` | Descuento de impacto. Para lanzamientos, campañas especiales o rifas de engagement. |
+| **23% — Aliados profesionales** | `COACHVALJI`, `GYMVALJI`, `NUTRIVALJI`, `ALIADOSVALJI` | Exclusivo para coaches, nutricionistas y gyms que trabajan con Valji. No publicar abiertamente en feed: canal directo o DM. |
+| **30%** | `MAXIMA30`, `OFFSEASON`, `TRAINING30`, `NOPARA30` | Descuento de temporada baja / off-season. Para activar ventas en periodos de menor demanda. |
+| **40%** | `LEGEND40`, `CROWN40`, `GOAT40`, `ELITE40`, `ÉLITE40` | Descuento máximo. Para rifas exclusivas, premios de loyalty, o campañas de alto impacto muy puntuales. No usar con frecuencia: degrada el valor de la marca si se abusa. |
+
+**Nota sobre los códigos de 23%:** `COACHVALJI`, `GYMVALJI`, `NUTRIVALJI` y `ALIADOSVALJI` son para el segmento profesional (coaches, nutricionistas, propietarios de gym). Tienen su propio canal de distribución — no publicarlos en posts abiertos de Instagram o historias públicas.
+
+---
+
+### Calendario deportivo costarricense — fechas clave para atar promos
+
+Lista editable. Agregar, mover o eliminar eventos según el año. Fuentes: FEUTRI (triatlón), FECOCI (ciclismo), AbuenPaso.cr y Finishers.com (running).
+
+**Enero — Temporada de propósitos de gym**
+- Pico de inscripciones en gimnasios y boxes de CrossFit.
+- Oportunidad: promos de proteínas y creatina, mensajes de "arrancá el año con la nutrición correcta".
+
+**Marzo**
+- Maratón Internacional San Carlos (1 de marzo) — 5K, 10K, 21K, 42K.
+- Beat Tri MultiReto en Puerto Viejo de Limón (8 de marzo) — triatlón en el Caribe.
+- Inicio de la temporada seca en el Valle Central: mayor volumen de entrenamiento outdoor.
+
+**Abril**
+- Maratón Cartago (12 de abril) — 21K y 42K, descenso neto de 372m.
+- Campeonato Nacional de Ciclismo de Ruta y Contrarreloj FECOCI (17-19 de abril).
+- Triatlón Desafío Malinche (17-18 de abril, Playa Hermosa, Guanacaste).
+- Escape de Isla Chora MultiReto (18-19 de abril, Playa Sámara).
+
+**Junio**
+- Maratón de San José (7 de junio) — 5K, 10K, 21K, 42K, Parque Central.
+- UCI CRC 506 Gran Fondo de Costa Rica (7 de junio) — 141,4 km y 69,8 km.
+
+**Agosto**
+- Media Maratón La Paz (9 de agosto).
+- 20 Millas Desafío Momentum (23 de agosto).
+
+**Septiembre**
+- Tamarindo Beach Marathon (5 de septiembre) — 5K, 10K, 21K, 42K.
+- Media Maratón Metro Credix (27 de septiembre).
+- Caribe Green Fest MultiReto (19-20 de septiembre) — festival deportivo multidisciplina.
+
+**Octubre**
+- Ticomán MultiReto (4 de octubre) — triatlón emblemático del circuito nacional.
+
+**Noviembre**
+- Gran Maratón Costa Rica (22 de noviembre) — 2K, 5K, 10K, 21K, Estadio Nacional.
+
+**Diciembre**
+- Marathon San José Costa Rica (6 de diciembre) — 5K, 10K, 21K, 42K, Estadio Nacional.
+- Temporada de cierre de temporada / off-season: ideal para promos `OFFSEASON`, `NOPARA30`.
+
+_(Agregar aquí eventos de MTB de la Serie CR MTB, Vuelta a Costa Rica, y otros que se confirmen cada año)_
+
+---
+
+### Ideas semilla de promo / rifa
+
+Puntos de partida para la rutina `/valji-post`. Desarrollar y adaptar según el contexto del post.
+
+**1. Rifa de caja de geles post-carrera**
+Mecánica: comentar el post + etiquetar a un compañero de entrenamiento. Premio: una caja de PowerGel Hydro o PowerGel Original. Activar 1-2 semanas antes de un maratón o triatlón en el calendario. Código de seguimiento: `MEDALLA15` para participantes que no ganen.
+
+**2. Código de temporada para el pico de gym de enero**
+Mecánica: publicar el código `TICOFIT` o `SPRINT10` el 2 de enero. Caption: "Arrancaste el año con las pilas puestas. Nosotros también." Vincular al carrito web con proteínas y creatina destacadas.
+
+**3. Bundle de off-season para ciclistas**
+Mecánica: combinar una proteína Muscle Milk + caja de barras Energize con código `OFFSEASON` (30%). Publicar en diciembre o en la semana posterior a la Vuelta a Costa Rica. Mensaje: "La temporada terminó. El entrenamiento no para."
+
+**4. Desafío de 4 semanas con check-in**
+Mecánica: el cliente se compromete a 4 semanas de entrenamiento y comparte su progreso etiquetando a Valji. Al final, los que completan el desafío reciben un código `ORO15` por DM. Genera contenido UGC y fidelización sin depender de un evento externo.
+
+**5. Promo de aliados — referidos de coaches**
+Mecánica: un coach que ya usa el código `COACHVALJI` comparte un post en sus stories recomendando Valji a sus atletas. Los atletas referidos obtienen un código de bienvenida del 10%. Genera ventas B2B2C y posiciona a Valji como aliado del coach, no competencia.
