@@ -816,7 +816,7 @@ const revealObserver = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll('.stat-card, .trust-item, .faq-item, .about-feature, .contact-item').forEach((el, i) => {
+document.querySelectorAll('.stat-card, .trust-item, .faq-item, .about-feature, .contact-item, .products-section .section-header').forEach((el, i) => {
   el.style.opacity = '0';
   el.style.transform = 'translateY(12px)';
   el.style.transition = `opacity 0.4s cubic-bezier(0.23,1,0.32,1) ${i * 0.05}s, transform 0.4s cubic-bezier(0.23,1,0.32,1) ${i * 0.05}s`;
@@ -869,3 +869,21 @@ buildWAOrderLink();
 // Deep link: open product modal from URL hash on load
 setTimeout(openProductFromHash, 300);
 window.addEventListener('hashchange', openProductFromHash);
+
+/* ── HERO VIDEO ───────────────────────────────────────────── */
+(() => {
+  const heroVideo = document.getElementById('hero-video');
+  if (!heroVideo) return;
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  heroVideo.playbackRate = 0.8;
+  let inView = true;
+  const sync = () => {
+    if (inView && !document.hidden) heroVideo.play().catch(() => {});
+    else heroVideo.pause();
+  };
+  new IntersectionObserver((entries) => {
+    inView = entries[0].isIntersecting;
+    sync();
+  }, { threshold: 0.15 }).observe(heroVideo);
+  document.addEventListener('visibilitychange', sync);
+})();
