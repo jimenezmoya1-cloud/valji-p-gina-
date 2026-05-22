@@ -146,3 +146,159 @@ Valji distribuye 21 productos en 6 categorías. Todos los precios son en colones
 - **Sistema Black Line de PowerBar:** Fuel 90, Iso Fuel 30 y Fuel 30 Gel forman un sistema de nutrición de ultra-resistencia diseñado para maximizar la ingesta de carbohidratos en esfuerzos de 3+ horas. Pensado para triatlón Ironman, ciclismo de etapas y ultra-fondo.
 - **Opciones veganas:** PowerGel Original e Iso Fuel 30 son aptos para veganos. Relevante para deportistas con restricciones dietéticas que no quieren sacrificar rendimiento.
 - **NSF Certified for Sport:** la Creatina ProSeries de Muscle Milk tiene esta certificación independiente que garantiza pureza y ausencia de contaminantes. La opción de confianza para el atleta de fuerza que compite en federaciones.
+
+---
+
+## 4. Identidad visual
+
+### Logo
+
+Valji tiene tres archivos de logo disponibles:
+
+| Archivo | Ruta | Uso |
+|---|---|---|
+| **Principal** | `assets/img/nuevooo/logotipo-con-fondo-transparente.png` | Nav, footer del sitio web y posts de Instagram. Este es el logo canónico. |
+| Secundario | `assets/img/logos/valji-logo.png` | Variante alternativa |
+| Legacy | `assets/img/logo/logo.jpg` | No usar para materiales nuevos (formato JPG sin transparencia) |
+
+**Reglas de uso del logo:**
+- Dejar espacio libre alrededor equivalente al menos a la altura de la "V" del logo en cada lado.
+- No deformar ni estirar — respetar proporciones originales.
+- No cambiar los colores del logo ni aplicar filtros de color externos (excepto `brightness(0) invert(1)` sobre fondo oscuro para obtener versión blanca, tal como se hace en las slides del carrusel).
+- En fondos muy claros usar la versión original; en fondos oscuros o de color usar la versión invertida a blanco.
+
+---
+
+### Colores
+
+Hay dos paletas relacionadas que coexisten en la identidad de Valji. Las dos son canónicas; cada una cumple un rol diferente.
+
+#### Paleta base de marca / sitio web
+
+Es la identidad oficial de Valji, definida en `style.css` mediante variables CSS en `:root`. Rige el sitio web y cualquier material de marca general.
+
+| Variable CSS | Hex | Rol |
+|---|---|---|
+| `--accent` | `#0070f3` | **Color principal de marca.** Azul brillante. CTAs, links, elementos interactivos destacados. |
+| `--accent-2` | `#0051cc` | Azul oscuro. Hover states, variante más profunda del azul principal. |
+| `--accent-3` | `#0f8e4e` | Verde. Acento secundario; usado en indicadores positivos o ambientales. |
+| `--gold` | `#f5c518` | Dorado. Detalles de énfasis puntual. |
+| `--wa-green` | `#25D366` | Verde WhatsApp. Exclusivo para botones y llamadas a acción de WhatsApp. |
+| `--text` | `#0f172a` | Casi-negro azulado. Color de texto principal sobre fondos claros. |
+| `--bg-0` | `#f8fafc` | Casi-blanco. Fondo principal del sitio. |
+
+#### Paleta editorial de Instagram ("Cadence Editorial")
+
+Es el tratamiento visual específico para posts y carruseles de Instagram. La extraen los archivos `valji-carousel/slide-1.html` a `slide-5.html`. No reemplaza la paleta de marca; la complementa con un lenguaje más editorial y atlético.
+
+| Hex | Nombre de trabajo | Rol en las slides |
+|---|---|---|
+| `#0F172A` | Negro azulado | Fondo oscuro dominante (slides 1 y 5). Base del sistema. |
+| `#F5F1EA` | Crema cálido | Fondo claro (slides 2, 3, 4). Zona de "respiración" editorial. |
+| `#0070f3` | Azul Valji | Bloque de color cromático (slide 3, columna izquierda); acento tipográfico (slide 2). Conecta con la paleta de marca. |
+| `#F4A845` | Naranja dorado | Acento de display tipográfico en los slides oscuros (1 y 5) y en slide 3 sobre azul. |
+| `#E8A042` | Naranja tostado | Bloque de color cromático (slide 4, columna derecha); acento sobre fondo crema (slide 2). Variante más cálida del naranja. |
+| `#1A0F02` | Negro cálido | Texto sobre fondos naranja/tostado (slides 4 y 5 CTA). Evita el contraste frío del negro puro. |
+
+**Máximo por composición:** 3 colores comandantes + 1 acento. Nunca más. El restraint es la marca del trabajo de nivel maestro.
+
+---
+
+### Tipografías
+
+| Familia | Pesos usados | Rol |
+|---|---|---|
+| **Outfit** | 600–900 (display), 300–500 (apoyo) | Títulos, headlines, números grandes, display. Toda la expresión tipográfica de impacto. |
+| **Inter** | 400–600 | Cuerpo de texto, eyebrows, labels, captions. Legibilidad a tamaños pequeños. |
+
+Ambas familias se cargan desde Google Fonts. El contraste entre Outfit en display masivo e Inter en texto fino es parte del lenguaje visual: una palabra a 200pt junto a un label a 11pt es una decisión editorial, no un error.
+
+---
+
+### Filosofía visual para Instagram: Cadence Editorial
+
+Cadence Editorial es el sistema visual que rige todos los posts de Instagram de Valji. Su principio central: la información debe caer como pasos en una carrera — medida, pesada, deliberada. Un gesto bold, un beat de silencio, otro gesto bold. El ojo recorre la composición como la respiración recorre un esfuerzo largo: nunca apresurado, nunca plano.
+
+**Principios fundamentales:**
+
+1. **Editorial atlético.** La estética toma la disciplina del diseño editorial europeo (Wallpaper*, Apartamento, The Gentlewoman) y la fusiona con la confianza muscular de los gráficos de deportes y la textura analógica de los campos de entrenamiento. No es lifestyle genérico: es craft con propósito.
+
+2. **Contraste tipográfico fuerte.** Un solo número o palabra a escala masiva (200pt–520pt) convive con labels a 11–16pt. Outfit en pesos 800–900 para el gesto; Inter en 400–600 para el detalle. Nunca párrafos: solo frases esenciales afiladas a su corte final, cada palabra con peso propio.
+
+3. **Máximo 3 colores comandantes + 1 acento por composición.** El color se trata como territorio: cada tono toma posesión de zonas geométricas grandes en lugar de dispersarse como ornamento. El restraint es lo que hace que el trabajo se sienta de nivel maestro en lugar de entusiasta.
+
+4. **Fotografía como superficie protagonista.** Las fotos no ilustran el texto: son el sujeto. Llenan el frame y se aquietan con una superposición tipográfica o un gradiente negro que permite que las palabras vivan dentro de la imagen. Las fotos de producto se aíslan en campos neutros con precisión quirúrgica.
+
+5. **Márgenes generosos e idénticos.** 70–80px de padding en todos lados en cada slide. El carrusel lee como una sola pieza editorial continua, no como cinco afiches desconectados. El ritmo vertical hace que el trabajo se sienta inevitable.
+
+6. **Texturas de grano.** Una capa sutil de noise (opacidad 4–7%, `mix-blend-mode: overlay` o `multiply`) sobre los fondos sólidos da profundidad analógica y evita la planitud digital. Invisible a primera vista; notaria si faltara.
+
+El resultado debe verse como si lo hubiera ensamblado un maestro artesano en horas tranquilas: cada línea con intención, cada gap medido, cada alineación verificada dos veces.
+
+---
+
+## 5. Voz y tono
+
+### Carácter de la voz
+
+Valji habla con cuatro cualidades simultáneas:
+
+- **Premium:** la voz refleja que los productos son de la más alta calidad mundial. No hay disculpas, no hay descuentos de autoestima.
+- **Experto:** Valji lleva más de 27 años en nutrición deportiva. La voz conoce la ciencia (C2MAX, Cologne List®, NSF Certified for Sport) y la usa con naturalidad, sin sonar pedante.
+- **Motivador:** el tono empuja. Habla al atleta que ya está comprometido y lo impulsa a dar el siguiente paso, no a convencerlo de que el deporte vale la pena.
+- **Cercano:** es una empresa costarricense. Habla como habla un tico de alta educación: con calidez, sin formalidad excesiva, con voseo natural.
+
+### Voseo costarricense
+
+Valji usa voseo en toda comunicación directa. No es un recurso de marketing: es la voz real de la empresa.
+
+- Imperativo: "rendí", "lográ", "entrená", "pedí", "escribinos", "deslizá"
+- Presente: "vos sabés", "si querés", "cuando entrenás"
+- Natural, no forzado: el voseo aparece donde fluye; no se inserta a la fuerza en cada oración.
+
+### Emojis
+
+Uso esparso y funcional, no decorativo. Un emoji como marcador visual está bien; tres emojis seguidos como reemplazo de argumentos está mal. En posts de Instagram: 0–2 emojis por caption. En WhatsApp: hasta 3, siempre con función (indicar categoría, romper bloques de texto).
+
+---
+
+### Palabras y frases SÍ
+
+| Categoría | Términos |
+|---|---|
+| Rendimiento | rendimiento, élite, potencia, potencia sostenida, energía, recuperación, aceleración muscular |
+| Científico | ciencia, fórmula, certificado, Cologne List®, C2MAX, NSF, ratio, hidratación de precisión |
+| Aspiracional | meta, logro, nivel, compromiso, temporada, ritmo, entrenamiento serio |
+| Servicio | asesoría, envío gratis, stock, disponible, pedido directo |
+| Costarricense | tico/tica (ocasional), "en CR", triatlón nacional, clima tropical |
+
+### Palabras y frases NO
+
+| Qué evitar | Por qué |
+|---|---|
+| "El mejor suplemento del mercado" | Superlativo sin respaldo; suena a publicidad barata |
+| "Quemá grasa rápido", "ponete fit" | Jerga genérica de gym sin sustancia |
+| "RESULTADOS GARANTIZADOS" | Mayúsculas gritando; promesa médica que no se puede sostener |
+| "Aprovechá esta oferta increíble" | Tono de mercado; no corresponde a una marca premium |
+| Terminología médica de prescripción | "Curá", "tratá", "sanará" — Valji no es un medicamento |
+| Diminutivos en exceso | "proteinita", "gelcito" — infantilizan la marca |
+
+---
+
+### Ejemplos on-brand
+
+**Ejemplo 1 — Post de producto:**
+> "El Fuel Gel 30 lleva el mismo ratio 1:0,8 glucosa-fructosa que usan los triatlonistas en Kona. Vos no tenés que pedalear el Tour para entrenarte con las mismas herramientas. Pedilo esta semana."
+
+**Ejemplo 2 — Caption de carrusel educativo:**
+> "En clima tropical sudás más de lo que sentís. El calor y la humedad combinados aceleran la pérdida de sodio y potasio sin que el cuerpo mande la señal de sed. Anticipá la hidratación, no la corrijás cuando ya llegó el calambre."
+
+---
+
+### Ejemplos off-brand
+
+**Ejemplo 1 — Tono genérico / gritón:**
+> "OFERTAAAAA Esta semana los mejores suplementos a PRECIOS INCREÍBLES no te lo podés perder ven y compra ahora"
+
+**Ejemplo 2 — Promesas médicas / jerga vacía:**
+> "Nuestras proteínas te ayudan a quemar grasa y ganar músculo al mismo tiempo. Resultados garantizados o te devolvemos el dinero. Ponete fit con Valji."
