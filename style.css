@@ -33,6 +33,7 @@
   --glass-bg: rgba(255, 255, 255, 0.55);
   --glass-border: rgba(255, 255, 255, 0.6);
   --glass-blur: blur(16px);
+  --promo-h: 40px;
 }
 
 /* ── RESET ────────────────────────────────────────────────── */
@@ -266,6 +267,100 @@ ul {
   -webkit-backdrop-filter: blur(20px) saturate(1.4);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.06);
   border-bottom: 1px solid var(--glass-border);
+}
+
+/* ── PROMO BAR (código del mes) ───────────────────────────── */
+/* La barra va arriba de todo; el contenido se empuja con padding-top
+   para que el video del hero quede debajo y no se tape. */
+body.has-promo {
+  padding-top: var(--promo-h);
+}
+
+body.has-promo .navbar {
+  top: var(--promo-h);
+}
+
+.promo-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, var(--accent-2), var(--accent));
+  color: #fff;
+  font-family: var(--font);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 16px rgba(20, 63, 168, 0.35);
+}
+
+.promo-bar[hidden] {
+  display: none;
+}
+
+.promo-trophy {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.promo-msg {
+  color: #fff;
+}
+
+.promo-code {
+  display: inline-block;
+  background: #fff;
+  color: var(--accent-2);
+  font-weight: 900;
+  letter-spacing: 0.09em;
+  padding: 0.08rem 0.5rem;
+  border-radius: 6px;
+  margin: 0 0.2rem;
+  animation: promoCodePulse 1.8s var(--ease-out) infinite;
+}
+
+@keyframes promoCodePulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.55);
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+  }
+}
+
+.promo-cta {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  opacity: 0.92;
+  white-space: nowrap;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .promo-bar:hover .promo-cta {
+    opacity: 1;
+  }
+}
+
+@media (max-width: 600px) {
+  .promo-bar {
+    font-size: 0.78rem;
+    gap: 0.4rem;
+    padding: 0.45rem 0.8rem;
+  }
+  .promo-cta {
+    display: none;
+  }
 }
 
 .nav-container {

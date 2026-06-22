@@ -36,6 +36,51 @@ function flavorColor(name) {
   return FLAVOR_COLORS.default;
 }
 
+/* ── PROMO DEL MES ────────────────────────────────────────── */
+/* Para cambiar la promo: edita este bloque y listo.
+   - active: false  -> apaga la barra
+   - endsAt: 'AAAA-MM-DD' -> se apaga sola después de esa fecha (null = no expira) */
+const PROMO = {
+  active: true,
+  code: 'CAMPEON',
+  text: '15% en las Cajas MIX de geles',
+  href: '#productos',
+  endsAt: '2026-06-30',
+};
+
+function promoIsLive() {
+  if (!PROMO.active) return false;
+  if (PROMO.endsAt) {
+    const end = new Date(PROMO.endsAt + 'T23:59:59');
+    if (!isNaN(end.getTime()) && new Date() > end) return false;
+  }
+  return true;
+}
+
+function syncPromoHeight() {
+  const bar = document.getElementById('promo-bar');
+  if (bar && !bar.hidden) {
+    document.documentElement.style.setProperty('--promo-h', bar.offsetHeight + 'px');
+  }
+}
+
+function renderPromo() {
+  const bar = document.getElementById('promo-bar');
+  if (!bar) return;
+  if (!promoIsLive()) {
+    bar.hidden = true;
+    document.body.classList.remove('has-promo');
+    return;
+  }
+  bar.href = PROMO.href || '#productos';
+  bar.innerHTML = `
+    <span class="promo-msg"><span class="promo-trophy" aria-hidden="true">🏆</span> Código del mes <span class="promo-code">${PROMO.code}</span> ${PROMO.text}</span>
+    <span class="promo-cta">Ver Cajas MIX</span>`;
+  bar.hidden = false;
+  document.body.classList.add('has-promo');
+  syncPromoHeight();
+}
+
 /* ── PRODUCT DATA ─────────────────────────────────────────── */
 const WHATSAPP = '50686724000';
 
@@ -913,6 +958,8 @@ document.getElementById('apply-promo-btn').addEventListener('click', () => {
 });
 
 /* ── INIT ─────────────────────────────────────────────────── */
+renderPromo();
+window.addEventListener('resize', syncPromoHeight);
 renderProducts('all');
 updateCart();
 buildWAOrderLink();
