@@ -1090,6 +1090,90 @@ ul {
   box-shadow: 0 2px 12px rgba(15, 142, 78, 0.15);
 }
 
+/* ── MIX BADGE (productos estrella) ───────────────────────── */
+.product-card-mix-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #ff453a, #c81e1e);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  padding: 0.28rem 0.62rem;
+  border-radius: 50px;
+  text-transform: uppercase;
+  box-shadow: 0 2px 10px rgba(200, 30, 30, 0.45);
+  animation: mixPulse 1.9s var(--ease-out) infinite;
+}
+
+.product-card-mix-badge .icon-inline {
+  display: inline-flex;
+}
+
+.product-card-mix-badge .icon-inline svg {
+  width: 13px;
+  height: 13px;
+}
+
+@keyframes mixPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 2px 10px rgba(255, 59, 48, 0.4), 0 0 0 0 rgba(255, 59, 48, 0.5);
+  }
+  50% {
+    transform: scale(1.07);
+    box-shadow: 0 5px 18px rgba(255, 59, 48, 0.55), 0 0 0 8px rgba(255, 59, 48, 0);
+  }
+}
+
+.product-card-mix-flavors {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #c81e1e;
+}
+
+.product-card-mix-flavors .icon-inline svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* MIX en el modal (arriba-izquierda para no chocar con el botón de cerrar) */
+.modal-mix-badge {
+  top: 14px;
+  left: 14px;
+  right: auto;
+  font-size: 0.78rem;
+  padding: 0.34rem 0.74rem;
+}
+
+.modal-mix-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 59, 48, 0.08);
+  border: 1px solid rgba(255, 59, 48, 0.22);
+  color: #b91c1c;
+  border-radius: 14px;
+  padding: 0.7rem 0.9rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.modal-mix-note .icon-inline svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
 .product-card-body {
   padding: 1.2rem;
   flex: 1;
@@ -1247,6 +1331,7 @@ ul {
 }
 
 .modal-gallery {
+  position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -2139,9 +2224,23 @@ body {
   }
 
   .product-card-category {
-    max-width: 80%;
+    max-width: 52%;
     font-size: 0.6rem;
     padding: 0.2rem 0.5rem;
+  }
+
+  .product-card-img-wrap .product-card-mix-badge {
+    top: 8px;
+    right: 8px;
+    gap: 2px;
+    font-size: 0.56rem;
+    letter-spacing: 0.06em;
+    padding: 0.18rem 0.42rem;
+  }
+
+  .product-card-img-wrap .product-card-mix-badge .icon-inline svg {
+    width: 10px;
+    height: 10px;
   }
 
   .section-title {

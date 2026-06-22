@@ -16,6 +16,7 @@ const ICON = {
   trash: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6h18"/><path d="M19 6v14c0 1-1 2-2 2H7c-1 0-2-1-2-2V6"/><path d="M8 6V4c0-1 1-2 2-2h4c1 0 2 1 2 2v2"/><line x1="10" x2="10" y1="11" y2="17"/><line x1="14" x2="14" y1="11" y2="17"/></svg>',
   plus: '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5v14"/></svg>',
   globe: '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
+  shuffle: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 18h1.4c1.3 0 2.5-.6 3.3-1.7l6.1-8.6c.7-1.1 2-1.7 3.3-1.7H22"/><path d="m18 2 4 4-4 4"/><path d="M2 6h1.9c1.5 0 2.9.9 3.6 2.2"/><path d="M22 18h-5.9c-1.3 0-2.6-.7-3.3-1.8l-.5-.8"/><path d="m18 14 4 4-4 4"/></svg>',
 };
 
 const FLAVOR_COLORS = {
@@ -152,6 +153,40 @@ const PRODUCTS = [
   },
 
   /* =================== POWERGEL =================== */
+  {
+    id: 'caja-mix-original',
+    name: 'Caja MIX Original 24U',
+    category: 'geles',
+    categoryLabel: 'PowerGel',
+    price: 36465,
+    priceLabel: '₡36.465',
+    priceUnit: 'caja variada de 24 unidades',
+    mix: true,
+    featured: true,
+    flavors: ['Caja variada con 4 sabores'],
+    images: [
+      'assets/img/productos/mix/original.webp',
+    ],
+    description: 'Una sola caja con 4 sabores distintos del PowerGel Original, para que no te aburrás de lo mismo en los entrenos largos ni en competencia. También es ideal para ir probando cuál te gusta más o para compartir. Es el gel de siempre de los profesionales desde 1996, con su mezcla de carbohidratos 2:1 (glucosa y fructosa) y unos 200mg de sodio por bolsita. Apto para veganos y certificado en la Cologne List®.',
+    benefits: ['4 sabores en una caja', 'Proporción C2MAX 2:1', '~200mg sodio', 'Apto vegano', 'Cologne List®'],
+  },
+  {
+    id: 'caja-mix-hydro',
+    name: 'Caja MIX Hydro 24U',
+    category: 'geles',
+    categoryLabel: 'PowerGel',
+    price: 42640,
+    priceLabel: '₡42.640',
+    priceUnit: 'caja variada de 24 unidades',
+    mix: true,
+    featured: true,
+    flavors: ['Caja variada con 4 sabores'],
+    images: [
+      'assets/img/productos/mix/hydro.webp',
+    ],
+    description: 'Una sola caja con 4 sabores distintos del PowerGel Hydro, para que tengás variedad en cada salida. Es lo más nuevo de PowerBar en geles: textura más líquida y te lo tomás sin necesidad de agua. Trae carbohidratos de rápida absorción y electrolitos para que rindás hasta el final. Ideal para ir cambiando de sabor en la misma carrera o para compartir.',
+    benefits: ['4 sabores en una caja', 'Sin necesidad de agua', 'Con electrolitos', 'Rápida absorción', 'Cologne List®'],
+  },
   {
     id: 'powergel-original',
     name: 'PowerGel Original 24U',
@@ -624,11 +659,22 @@ function openProductModal(product, preselectedFlavor) {
   modalQty = 1;
   setProductHash(product, selectedFlavor);
 
+  const isMix = !!product.mix;
   document.getElementById('modal-category-badge').textContent = product.categoryLabel;
   document.getElementById('modal-product-name').textContent = product.name;
   document.getElementById('modal-price').textContent = `${product.priceLabel}  ${product.priceUnit || ''}`;
   document.getElementById('modal-description').textContent = product.description;
   document.getElementById('qty-value').textContent = 1;
+
+  // MIX (caja variada): badge, nota y sin selector de sabor
+  const mixBadge = document.getElementById('modal-mix-badge');
+  mixBadge.innerHTML = `<span class="icon-inline">${ICON.shuffle}</span>MIX`;
+  mixBadge.hidden = !isMix;
+  const mixNote = document.getElementById('modal-mix-note');
+  mixNote.innerHTML = `<span class="icon-inline">${ICON.shuffle}</span> Trae <strong>4 sabores variados</strong> en la misma caja, así no tenés que escoger.`;
+  mixNote.hidden = !isMix;
+  document.getElementById('modal-flavor-selector').style.display = isMix ? 'none' : '';
+  document.getElementById('modal-flavors').style.display = isMix ? 'none' : '';
 
   // Images
   const mainImg = document.getElementById('modal-main-img');
@@ -678,7 +724,7 @@ function openProductModal(product, preselectedFlavor) {
   });
 
   // WhatsApp direct
-  const waText = `Hola Valji, me interesa: ${product.name}${selectedFlavor ? ' – ' + selectedFlavor : ''}. Tienen disponibilidad. Precio: ${product.priceLabel}`;
+  const waText = `Hola Valji, me interesa: ${product.name}${(!isMix && selectedFlavor) ? ' – ' + selectedFlavor : ''}. Tienen disponibilidad. Precio: ${product.priceLabel}`;
   document.getElementById('modal-whatsapp-btn').href = buildWALink(waText);
 
   document.getElementById('product-modal-overlay').classList.add('open');
@@ -727,24 +773,29 @@ let activeFilter = 'all';
 
 function renderProducts(filter = 'all') {
   activeFilter = filter;
-  const filtered = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
+  const base = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
+  // Productos destacados (estrella) primero, orden estable para el resto
+  const filtered = [...base].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
   const grid = document.getElementById('products-grid');
   grid.innerHTML = filtered.map((product, idx) => `
-    <div class="product-card" style="animation-delay:${idx * 0.06}s" data-id="${product.id}" role="button" tabindex="0" aria-label="Ver detalles de ${product.name}">
+    <div class="product-card${product.mix ? ' product-card-mix' : ''}" style="animation-delay:${idx * 0.06}s" data-id="${product.id}" role="button" tabindex="0" aria-label="Ver detalles de ${product.name}">
       <div class="product-card-img-wrap">
         <img class="product-card-img" src="${product.images[0]}" alt="${product.name}" loading="lazy" onerror="this.src=''" />
         <span class="product-card-category">${product.categoryLabel}</span>
+        ${product.mix ? `<span class="product-card-mix-badge"><span class="icon-inline">${ICON.shuffle}</span>MIX</span>` : ''}
       </div>
       <div class="product-card-body">
         <div class="product-card-name">${product.name}</div>
         <div class="product-card-flavors">
-          ${product.flavors.map(f => `<div class="flavor-dot" style="background:${flavorColor(f)}"></div>`).join('')}
-          <span style="font-size:0.78rem;color:var(--text-muted);margin-left:4px">${product.flavors.length} sabor${product.flavors.length > 1 ? 'es' : ''}</span>
+          ${product.mix
+            ? `<span class="product-card-mix-flavors"><span class="icon-inline">${ICON.shuffle}</span> 4 sabores en una sola caja</span>`
+            : `${product.flavors.map(f => `<div class="flavor-dot" style="background:${flavorColor(f)}"></div>`).join('')}
+          <span style="font-size:0.78rem;color:var(--text-muted);margin-left:4px">${product.flavors.length} sabor${product.flavors.length > 1 ? 'es' : ''}</span>`}
         </div>
         <div class="product-card-price">${product.priceLabel}</div>
       </div>
       <div class="product-card-footer">
-        ${product.flavors.length === 1 ? `<button class="btn-card-quickadd" onclick="event.stopPropagation();addToCart(PRODUCTS.find(p=>p.id==='${product.id}'),'${product.flavors[0]}',1)" aria-label="Agregar al carrito"><span class="icon-inline">${ICON.cart}</span> Agregar</button>` : `<span class="btn-card-details">Ver detalles</span>`}
+        ${(product.flavors.length === 1 && !product.mix) ? `<button class="btn-card-quickadd" onclick="event.stopPropagation();addToCart(PRODUCTS.find(p=>p.id==='${product.id}'),'${product.flavors[0]}',1)" aria-label="Agregar al carrito"><span class="icon-inline">${ICON.cart}</span> Agregar</button>` : `<span class="btn-card-details">Ver detalles</span>`}
         <a class="btn-card-wa" href="${buildWALink(`Hola Valji, me interesa: ${product.name}. Tienen disponibilidad.`)}" target="_blank" aria-label="WhatsApp" title="Consultar por WhatsApp" onclick="event.stopPropagation()">
           <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5C21.7 6.7 19.3 5.7 16.7 5.7C11.3 5.7 6.9 10.1 6.9 15.5C6.9 17.3 7.4 19 8.2 20.5L6.8 25.5L11.9 24.1C13.4 24.9 15 25.3 16.7 25.3C22.1 25.3 26.5 20.9 26.5 15.5C26.5 12.9 25.3 10.3 23.5 8.5ZM16.7 23.7C15.2 23.7 13.6 23.3 12.3 22.5L11.9 22.3L8.9 23.1L9.7 20.2L9.5 19.8C8.6 18.4 8.2 16.9 8.2 15.5C8.2 10.9 11.9 7.1 16.7 7.1C19 7.1 21.1 8 22.7 9.6C24.3 11.2 25.2 13.3 25.2 15.5C25.2 20.1 21.4 23.7 16.7 23.7ZM21.4 17.7C21.1 17.5 19.6 16.8 19.4 16.7C19.1 16.6 19 16.5 18.8 16.8C18.7 17.1 18.1 17.7 17.9 17.9C17.8 18.1 17.6 18.1 17.4 18C15.8 17.2 14.8 16.6 13.7 14.8C13.4 14.3 14 14.3 14.5 13.3C14.6 13.1 14.5 12.9 14.5 12.8C14.4 12.6 13.8 11.1 13.6 10.5C13.3 9.9 13.1 10 12.9 10C12.7 10 12.6 10 12.4 10C12.2 10 11.9 10.1 11.6 10.4C11.4 10.7 10.6 11.4 10.6 12.9C10.6 14.4 11.6 15.8 11.8 16.1C12 16.3 13.8 19 16.4 19.9C18.1 20.5 18.8 20.6 19.7 20.4C20.3 20.3 21.4 19.7 21.7 19C21.9 18.3 21.9 17.7 21.7 17.7H21.4Z" fill="white"/></svg>
         </a>
