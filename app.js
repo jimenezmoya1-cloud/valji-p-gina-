@@ -535,6 +535,22 @@ const PRODUCTS = [
     description: 'Wafer crujiente bañado en chocolate con leche y con 10 g de proteína por barra. Sin azúcares añadidos, con ese toque dulce que se siente premio pero suma a tu meta. Barra de 39 g individual, perfecta para llevar en la mochila o para el antojo después de entrenar. Certificado Informed Sport.',
     benefits: ['10 g de proteína', 'Bañado en chocolate', 'Sin azúcar añadido', 'Para llevar', 'Informed Sport'],
   },
+  {
+    id: 'creatine-monohydrate-an',
+    name: 'Creatine Monohydrate 250g',
+    category: 'suplementos',
+    categoryLabel: 'Suplementos',
+    price: 15362,
+    priceLabel: '₡15.362',
+    priceUnit: 'por presentación',
+    nuevo: true,
+    flavors: ['Sin sabor'],
+    images: [
+      'assets/img/Junio_2026/an-creatine.webp',
+    ],
+    description: 'Creatina monohidrato 100% pura y micronizada de Applied Nutrition. Te da 5 g por toma para aumentar la fuerza, la potencia y el rendimiento en los esfuerzos de alta intensidad, además de apoyar la recuperación y el crecimiento muscular. Rinde 50 tomas por tarro de 250 g. Certificada Informed Sport, probada lote por lote y libre de sustancias prohibidas.',
+    benefits: ['5 g por toma', '100% micronizada', 'Fuerza y potencia', '50 tomas por tarro', 'Informed Sport'],
+  },
 ];
 
 const PROMO_CODES = {
