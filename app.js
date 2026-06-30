@@ -915,8 +915,9 @@ let activeFilter = 'all';
 function renderProducts(filter = 'all') {
   activeFilter = filter;
   const base = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
-  // Productos destacados (estrella) primero, orden estable para el resto
-  const filtered = [...base].sort((a, b) => (b.featured ? 1 : 0) - (a.featured ? 1 : 0));
+  // Orden: destacados (Cajas MIX) primero, luego los nuevos, luego el resto (estable)
+  const rank = p => p.featured ? 0 : (p.nuevo ? 1 : 2);
+  const filtered = [...base].sort((a, b) => rank(a) - rank(b));
   const grid = document.getElementById('products-grid');
   grid.innerHTML = filtered.map((product, idx) => `
     <div class="product-card${product.mix ? ' product-card-mix' : ''}" style="animation-delay:${idx * 0.06}s" data-id="${product.id}" role="button" tabindex="0" aria-label="Ver detalles de ${product.name}">
