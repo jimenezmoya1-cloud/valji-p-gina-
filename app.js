@@ -20,6 +20,8 @@ const ICON = {
 };
 
 const FLAVOR_COLORS = {
+  'blue raspberry': '#3B7DD8', cocoa: '#5D4037', cherry: '#E5364B', tang: '#F5882D',
+  pistach: '#9CCC65', caramelo: '#C8862B', caramel: '#C8862B', orange: '#F5882D', strawberry: '#E85D75',
   chocolate: '#6B3A2A', vainilla: '#F5E6C8', fresa: '#E85D75', mango: '#F5A623',
   naranja: '#F5882D', limon: '#D4E157', 'fresa-sandía': '#E85D75',
   'mango-naranja': '#F5A623', tropical: '#FFD54F', berry: '#9C27B0',
@@ -460,6 +462,79 @@ const PRODUCTS = [
     description: 'Botella deportiva Ánfora PowerBar de alta calidad. Diseño ergonómico, fácil de apretar y con válvula de alto flujo. Ideal para hidratarte durante tus entrenamientos de ciclismo, running o en el gimnasio.',
     benefits: ['Fácil de apretar', 'Válvula alto flujo', 'Diseño ergonómico', 'Libre de BPA'],
   },
+
+  /* =================== NUEVOS · JUNIO 2026 =================== */
+  {
+    id: 'dymatize-performance-shake',
+    name: 'Dymatize Performance Shake',
+    category: 'proteinas',
+    categoryLabel: 'Proteínas',
+    price: 2022,
+    priceLabel: '₡2.022',
+    priceUnit: 'por unidad',
+    nuevo: true,
+    flavors: ['Fruity Pebbles', 'Cocoa Pebbles'],
+    images: [
+      'assets/img/Junio_2026/dymatize-fruity.webp',
+      'assets/img/Junio_2026/dymatize-cocoa.webp',
+    ],
+    description: 'Proteína lista para beber con 30 g por botella y el sabor de tus cereales favoritos. Solo 160 calorías y 1 g de azúcar, sin azúcar añadido, y 6.2 g de BCAA para la recuperación. Te la tomás directo después de entrenar o cuando querés un snack alto en proteína sin preparar nada. Botella de 11.5 oz, fácil de llevar.',
+    benefits: ['30 g de proteína', '160 calorías', '1 g de azúcar', '6.2 g de BCAA', 'Lista para beber'],
+  },
+  {
+    id: 'abe-preworkout-rtd',
+    name: 'A.B.E Pre-Workout RTD',
+    category: 'preentreno',
+    categoryLabel: 'Pre-entreno',
+    price: 1494,
+    priceLabel: '₡1.494',
+    priceUnit: 'por unidad',
+    nuevo: true,
+    flavors: ['Tang Orange', 'Cherry Millions', 'Orange Strawberry'],
+    images: [
+      'assets/img/Junio_2026/abe-orange.webp',
+      'assets/img/Junio_2026/abe-cherry.webp',
+      'assets/img/Junio_2026/abe-strawberry.webp',
+    ],
+    description: 'Pre-entreno listo en lata, con 200 mg de cafeína, beta-alanina, L-citrulina y taurina para arrancar con energía y foco. Cero azúcar y solo 5 calorías, así que suma rendimiento sin sumar peso. Energía limpia y sin nervios, certificada Informed Sport y libre de sustancias prohibidas. Lata de 330 ml, en colaboración con Tang y Millions.',
+    benefits: ['200 mg de cafeína', 'Beta-alanina + citrulina', 'Cero azúcar', 'Energía sin nervios', 'Informed Sport'],
+  },
+  {
+    id: 'tri-magnesium-200g',
+    name: 'Tri-Magnesium 200g',
+    category: 'suplementos',
+    categoryLabel: 'Suplementos',
+    price: 16728,
+    priceLabel: '₡16.728',
+    priceUnit: 'por presentación',
+    nuevo: true,
+    flavors: ['Blue Raspberry', 'Lemon & Lime', 'Tropical Vibes', 'Strawberry Raspberry'],
+    images: [
+      'assets/img/Junio_2026/trimag-blue.webp',
+      'assets/img/Junio_2026/trimag-lemon.webp',
+      'assets/img/Junio_2026/trimag-tropical.webp',
+      'assets/img/Junio_2026/trimag-strawberry.webp',
+    ],
+    description: 'Complejo de magnesio 3 en 1 que combina bisglicinato, taurato y citrato para darte 300 mg de magnesio elemental por toma. Te ayuda con la recuperación muscular, el descanso y a reducir los calambres y la fatiga. Rinde 50 tomas por tarro de 200 g, una al día disuelta en agua. Vegano, Halal y certificado Informed Sport.',
+    benefits: ['300 mg de magnesio', '3 formas de magnesio', 'Mejor descanso', '50 tomas por tarro', 'Informed Sport'],
+  },
+  {
+    id: 'protein-wafer',
+    name: 'Protein Wafer',
+    category: 'barras',
+    categoryLabel: 'Barras',
+    price: 1618,
+    priceLabel: '₡1.618',
+    priceUnit: 'por unidad',
+    nuevo: true,
+    flavors: ['Chocolate Pistacho', 'Chocolate Caramelo'],
+    images: [
+      'assets/img/Junio_2026/wafer-pistacho.webp',
+      'assets/img/Junio_2026/wafer-caramelo.webp',
+    ],
+    description: 'Wafer crujiente bañado en chocolate con leche y con 10 g de proteína por barra. Sin azúcares añadidos, con ese toque dulce que se siente premio pero suma a tu meta. Barra de 39 g individual, perfecta para llevar en la mochila o para el antojo después de entrenar. Certificado Informed Sport.',
+    benefits: ['10 g de proteína', 'Bañado en chocolate', 'Sin azúcar añadido', 'Para llevar', 'Informed Sport'],
+  },
 ];
 
 const PROMO_CODES = {
@@ -721,6 +796,11 @@ function openProductModal(product, preselectedFlavor) {
   document.getElementById('modal-flavor-selector').style.display = isMix ? 'none' : '';
   document.getElementById('modal-flavors').style.display = isMix ? 'none' : '';
 
+  // Tag "Nuevo"
+  const nuevoBadge = document.getElementById('modal-nuevo-badge');
+  nuevoBadge.textContent = 'Nuevo';
+  nuevoBadge.hidden = !product.nuevo;
+
   // Images
   const mainImg = document.getElementById('modal-main-img');
   const flavorIdx = Math.max(0, product.flavors.indexOf(selectedFlavor));
@@ -828,6 +908,7 @@ function renderProducts(filter = 'all') {
         <img class="product-card-img" src="${product.images[0]}" alt="${product.name}" loading="lazy" onerror="this.src=''" />
         <span class="product-card-category">${product.categoryLabel}</span>
         ${product.mix ? `<span class="product-card-mix-badge"><span class="icon-inline">${ICON.shuffle}</span>MIX</span>` : ''}
+        ${product.nuevo ? `<span class="product-card-nuevo-badge">Nuevo</span>` : ''}
       </div>
       <div class="product-card-body">
         <div class="product-card-name">${product.name}</div>

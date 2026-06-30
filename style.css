@@ -303,6 +303,13 @@ body.has-promo .navbar {
   box-shadow: 0 2px 16px rgba(20, 63, 168, 0.35);
 }
 
+/* El atributo hidden debe ganar siempre, aunque una clase fije display.
+   Si no, el badge y la nota MIX del modal se quedaban visibles en
+   productos que no son MIX (porque .product-card-mix-badge fija display). */
+[hidden] {
+  display: none !important;
+}
+
 .promo-bar[hidden] {
   display: none;
 }
@@ -1267,6 +1274,33 @@ body.has-promo .navbar {
   width: 18px;
   height: 18px;
   flex-shrink: 0;
+}
+
+/* Tag "Nuevo" (azul de marca; el rojo queda reservado a MIX) */
+.product-card-nuevo-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: linear-gradient(135deg, #0070f3, #0051cc);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.28rem 0.66rem;
+  border-radius: 999px;
+  box-shadow: 0 2px 10px rgba(0, 112, 243, 0.35);
+}
+
+.modal-nuevo-badge {
+  top: 14px;
+  right: 14px;
+  font-size: 0.78rem;
+  padding: 0.34rem 0.74rem;
 }
 
 .product-card-body {
