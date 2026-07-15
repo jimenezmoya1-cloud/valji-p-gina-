@@ -10,6 +10,41 @@
     gtag('js', new Date());
     gtag('config', 'G-9WGBQ49F44');
   </script>
+
+  <!-- ===== Meta Pixel (Facebook / Instagram) ===== -->
+  <!-- PARA ACTIVARLO: pegá el ID de tu Pixel de Meta en la línea de abajo (solo el número). -->
+  <script>
+    window.VALJI_META_PIXEL_ID = '860755996779169'; // Pixel/Dataset de Meta — Valji
+    (function () {
+      var id = window.VALJI_META_PIXEL_ID;
+      if (!id || id === 'PEGAR_ID_AQUI') {
+        console.warn('[Valji] Meta Pixel instalado pero SIN activar: falta pegar el ID del Pixel en index.html.');
+        return;
+      }
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0];
+        s.parentNode.insertBefore(t, s)
+      }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', id);
+      fbq('track', 'PageView');
+    })();
+  </script>
+  <!-- Rastrea cada clic a WhatsApp como evento "Contact" (una persona te escribió). -->
+  <script>
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest && e.target.closest('a[href*="wa.me"]');
+      if (link && typeof window.fbq === 'function') {
+        window.fbq('track', 'Contact', { content_name: 'Clic WhatsApp Valji' });
+      }
+    }, true);
+  </script>
+  <!-- ===== Fin Meta Pixel ===== -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Valji | Nutrición Deportiva Premium · Costa Rica</title>
