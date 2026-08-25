@@ -40,6 +40,10 @@
       var link = e.target.closest && e.target.closest('a[href*="wa.me"]');
       if (link && typeof window.fbq === 'function') {
         window.fbq('track', 'Contact', { content_name: 'Clic WhatsApp Valji' });
+        var mayoreo = link.getAttribute('data-mayoreo');
+        if (mayoreo) {
+          window.fbq('track', 'Lead', { content_name: 'Mayoreo ' + mayoreo });
+        }
       }
     }, true);
   </script>
@@ -179,6 +183,7 @@
       </a>
       <ul class="nav-links" id="nav-links">
         <li><a href="#productos">Productos</a></li>
+        <li><a href="#mayoreo">Mayoreo</a></li>
         <li><a href="#quienes-somos">Nosotros</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="#contacto">Contacto</a></li>
@@ -291,6 +296,44 @@
     <!-- PRODUCTS GRID -->
     <div class="products-grid" id="products-grid">
       <!-- Injected by JS -->
+    </div>
+  </section>
+
+  <!-- ===== MAYOREO ===== -->
+  <section id="mayoreo" class="wholesale-section">
+    <div class="section-header">
+      <span class="section-eyebrow">Mayoreo</span>
+      <h2 class="section-title">&iquest;Vend&eacute;s o entren&aacute;s <span class="gradient-text">a otros?</span></h2>
+      <p class="section-sub">Somos distribuidores directos desde 1997. Si compr&aacute;s por volumen, tenemos precio de mayoreo.</p>
+    </div>
+
+    <div class="wholesale-container">
+      <div class="wholesale-grid">
+        <a class="wholesale-card" href="https://wa.me/50686724000?text=Hola%20Valji%2C%20tengo%20un%20gimnasio%20y%20quiero%20cotizar%20al%20por%20mayor.%20Los%20productos%20y%20cantidades%20que%20necesito%20son%3A" target="_blank" rel="noopener" data-mayoreo="Gimnasio">
+          <span class="wholesale-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6.5 6.5 11 11"/><path d="m21 21-1-1"/><path d="m3 3 1 1"/><path d="m18 22 4-4"/><path d="m2 6 4-4"/><path d="m3 10 7-7"/><path d="m14 21 7-7"/></svg></span>
+          <h3>Gimnasios y boxes</h3>
+          <p>Para revender en recepción o surtir a tus atletas con proteína, geles y electrolitos.</p>
+          <span class="wholesale-cta">Cotizar &rarr;</span>
+        </a>
+        <a class="wholesale-card" href="https://wa.me/50686724000?text=Hola%20Valji%2C%20tengo%20una%20tienda%20y%20quiero%20cotizar%20al%20por%20mayor.%20Los%20productos%20y%20cantidades%20que%20necesito%20son%3A" target="_blank" rel="noopener" data-mayoreo="Tienda">
+          <span class="wholesale-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/><path d="M2 7h20"/></svg></span>
+          <h3>Tiendas y farmacias</h3>
+          <p>Precio de distribuidor directo, sin intermediarios, para que te quede margen en góndola.</p>
+          <span class="wholesale-cta">Cotizar &rarr;</span>
+        </a>
+        <a class="wholesale-card" href="https://wa.me/50686724000?text=Hola%20Valji%2C%20entreno%20un%20equipo%20o%20club%20y%20quiero%20cotizar%20al%20por%20mayor.%20Los%20productos%20y%20cantidades%20que%20necesito%20son%3A" target="_blank" rel="noopener" data-mayoreo="Equipo">
+          <span class="wholesale-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></span>
+          <h3>Equipos, clubes y coaches</h3>
+          <p>Pedidos grupales para una temporada o una carrera, en un solo envío para todo el equipo.</p>
+          <span class="wholesale-cta">Cotizar &rarr;</span>
+        </a>
+      </div>
+
+      <div class="wholesale-foot">
+        <p class="wholesale-min"><strong>Desde 6 cajas o &#8353;150.000</strong> por pedido &middot; Env&iacute;o gratis a todo el pa&iacute;s</p>
+        <a href="https://wa.me/50686724000?text=Hola%20Valji%2C%20quiero%20cotizar%20al%20por%20mayor.%20Los%20productos%20y%20cantidades%20que%20necesito%20son%3A" target="_blank" rel="noopener" class="btn-primary" data-mayoreo="General">Cotizar al por mayor</a>
+        <p class="wholesale-note">Contanos qu&eacute; productos y qu&eacute; cantidades necesit&aacute;s y te pasamos la cotizaci&oacute;n con precio de mayoreo. Sin compromiso.</p>
+      </div>
     </div>
   </section>
 

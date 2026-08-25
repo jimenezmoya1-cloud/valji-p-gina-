@@ -2743,3 +2743,123 @@ body {
   0% { background-position: 200% 200%; }
   100% { background-position: -200% -200%; }
 }
+
+/* ── MAYOREO ──────────────────────────────────────────────── */
+.wholesale-section {
+  padding: 6rem 1.5rem;
+  background: var(--bg-2);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.wholesale-container {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.wholesale-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.wholesale-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding: 2rem 1.75rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-card);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s var(--ease-out), border-color var(--transition), box-shadow 0.2s var(--ease-out);
+}
+
+.wholesale-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow);
+}
+
+.wholesale-card:active {
+  transform: scale(0.99);
+  transition-duration: 0.1s;
+}
+
+.wholesale-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(27, 93, 224, 0.08);
+  color: var(--accent);
+}
+
+.wholesale-card h3 {
+  font-family: var(--font);
+  font-size: 1.15rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.wholesale-card p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.wholesale-cta {
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--accent);
+}
+
+.wholesale-foot {
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.wholesale-min {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.wholesale-min strong {
+  color: var(--text);
+  font-family: var(--font);
+}
+
+.wholesale-note {
+  margin-top: 1.25rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text-dim);
+}
+
+@media (max-width: 900px) {
+  .wholesale-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .wholesale-card {
+    padding: 1.5rem 1.35rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .wholesale-section {
+    padding: 4rem 1.25rem;
+  }
+}
