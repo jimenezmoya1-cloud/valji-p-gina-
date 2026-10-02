@@ -32,7 +32,7 @@ Premium. Valji no compite por precio con tiendas genéricas. Compite por calidad
 
 ### Frase de marca
 
-> "Rinde al máximo con la nutrición que mereces."
+> "Rendí al máximo con la nutrición que merecés."
 
 Esta frase aparece en el hero del sitio web y resume todo: exigencia, merecimiento y rendimiento como propósito central.
 

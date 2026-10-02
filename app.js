@@ -662,7 +662,7 @@ function updateCart() {
 function renderCartItems() {
   const container = document.getElementById('cart-items');
   if (cart.length === 0) {
-    container.innerHTML = '<p class="cart-empty">Tu carrito está vacío.<br>¡Añade productos para ordenar!</p>';
+    container.innerHTML = '<p class="cart-empty">Tu carrito está vacío.<br>¡Agregá productos para ordenar!</p>';
     return;
   }
   container.innerHTML = cart.map(item => `
