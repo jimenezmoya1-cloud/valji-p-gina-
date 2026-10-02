@@ -603,7 +603,7 @@ function addToCart(product, flavor, qty = 1) {
     });
   }
   updateCart();
-  showToast(`¡${product.name}${flavor ? ' – ' + flavor : ''} agregado al carrito!`);
+  showToast(`¡${product.name}${flavor ? ', ' + flavor : ''} agregado al carrito!`);
 }
 
 function removeFromCart(productId, flavor) {
@@ -692,7 +692,7 @@ function buildWAOrderLink() {
   let msg = '¡Hola Valji! Quiero hacer el siguiente pedido:\n\n';
   cart.forEach(item => {
     msg += `• ${item.name}`;
-    if (item.flavor) msg += ` – ${item.flavor}`;
+    if (item.flavor) msg += `, ${item.flavor}`;
     msg += ` x${item.qty} (${formatPrice(item.price * item.qty)})\n`;
   });
 
@@ -711,8 +711,8 @@ function buildWAOrderLink() {
   msg += `\nIVA (13%): ${formatPrice(iva)}`;
   msg += `\n*TOTAL: ${formatPrice(total)}*`;
 
-  msg += '\n\nEnvio gratis a nivel nacional';
-  msg += '\n\nPueden confirmar disponibilidad para coordinar el pago. Gracias.';
+  msg += '\n\nEnvío gratis a nivel nacional';
+  msg += '\n\n¿Pueden confirmar disponibilidad para coordinar el pago? Gracias.';
   document.getElementById('whatsapp-order-btn').href = buildWALink(msg);
 }
 
@@ -865,7 +865,7 @@ function openProductModal(product, preselectedFlavor) {
   });
 
   // WhatsApp direct
-  const waText = `Hola Valji, me interesa: ${product.name}${(!isMix && selectedFlavor) ? ' – ' + selectedFlavor : ''}. Tienen disponibilidad. Precio: ${product.priceLabel}`;
+  const waText = `Hola Valji, me interesa: ${product.name}${(!isMix && selectedFlavor) ? ', ' + selectedFlavor : ''}. ¿Tienen disponibilidad? Precio: ${product.priceLabel}`;
   document.getElementById('modal-whatsapp-btn').href = buildWALink(waText);
 
   document.getElementById('product-modal-overlay').classList.add('open');
@@ -878,7 +878,7 @@ function updateFlavorBtns() {
   });
   if (currentProduct) {
     setProductHash(currentProduct, selectedFlavor);
-    const waText = `Hola Valji, me interesa: ${currentProduct.name}${selectedFlavor ? ' – ' + selectedFlavor : ''}. Tienen disponibilidad. Precio: ${currentProduct.priceLabel}`;
+    const waText = `Hola Valji, me interesa: ${currentProduct.name}${selectedFlavor ? ', ' + selectedFlavor : ''}. ¿Tienen disponibilidad? Precio: ${currentProduct.priceLabel}`;
     document.getElementById('modal-whatsapp-btn').href = buildWALink(waText);
   }
 }
@@ -939,7 +939,7 @@ function renderProducts(filter = 'all') {
       </div>
       <div class="product-card-footer">
         ${(product.flavors.length === 1 && !product.mix) ? `<button class="btn-card-quickadd" onclick="event.stopPropagation();addToCart(PRODUCTS.find(p=>p.id==='${product.id}'),'${product.flavors[0]}',1)" aria-label="Agregar al carrito"><span class="icon-inline">${ICON.cart}</span> Agregar</button>` : `<span class="btn-card-details">Ver detalles</span>`}
-        <a class="btn-card-wa" href="${buildWALink(`Hola Valji, me interesa: ${product.name}. Tienen disponibilidad.`)}" target="_blank" aria-label="WhatsApp" title="Consultar por WhatsApp" onclick="event.stopPropagation()">
+        <a class="btn-card-wa" href="${buildWALink(`Hola Valji, me interesa: ${product.name}. ¿Tienen disponibilidad?`)}" target="_blank" aria-label="WhatsApp" title="Consultar por WhatsApp" onclick="event.stopPropagation()">
           <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5C21.7 6.7 19.3 5.7 16.7 5.7C11.3 5.7 6.9 10.1 6.9 15.5C6.9 17.3 7.4 19 8.2 20.5L6.8 25.5L11.9 24.1C13.4 24.9 15 25.3 16.7 25.3C22.1 25.3 26.5 20.9 26.5 15.5C26.5 12.9 25.3 10.3 23.5 8.5ZM16.7 23.7C15.2 23.7 13.6 23.3 12.3 22.5L11.9 22.3L8.9 23.1L9.7 20.2L9.5 19.8C8.6 18.4 8.2 16.9 8.2 15.5C8.2 10.9 11.9 7.1 16.7 7.1C19 7.1 21.1 8 22.7 9.6C24.3 11.2 25.2 13.3 25.2 15.5C25.2 20.1 21.4 23.7 16.7 23.7ZM21.4 17.7C21.1 17.5 19.6 16.8 19.4 16.7C19.1 16.6 19 16.5 18.8 16.8C18.7 17.1 18.1 17.7 17.9 17.9C17.8 18.1 17.6 18.1 17.4 18C15.8 17.2 14.8 16.6 13.7 14.8C13.4 14.3 14 14.3 14.5 13.3C14.6 13.1 14.5 12.9 14.5 12.8C14.4 12.6 13.8 11.1 13.6 10.5C13.3 9.9 13.1 10 12.9 10C12.7 10 12.6 10 12.4 10C12.2 10 11.9 10.1 11.6 10.4C11.4 10.7 10.6 11.4 10.6 12.9C10.6 14.4 11.6 15.8 11.8 16.1C12 16.3 13.8 19 16.4 19.9C18.1 20.5 18.8 20.6 19.7 20.4C20.3 20.3 21.4 19.7 21.7 19C21.9 18.3 21.9 17.7 21.7 17.7H21.4Z" fill="white"/></svg>
         </a>
       </div>
@@ -1035,21 +1035,21 @@ document.getElementById('apply-promo-btn').addEventListener('click', () => {
     is2x1 = true;
     appliedDiscount = 0;
     appliedPromoCode = code;
-    msgEl.textContent = `¡Codigo ${code} aplicado! (2x1 - el mas barato gratis)`;
+    msgEl.textContent = `¡Código ${code} aplicado! (2x1: el más barato gratis)`;
     msgEl.className = 'promo-message success';
-    showToast(`Promo 2x1 activada!`);
+    showToast(`¡Promo 2x1 activada!`);
   } else if (PROMO_CODES[code]) {
     is2x1 = false;
     appliedDiscount = PROMO_CODES[code];
     appliedPromoCode = code;
-    msgEl.textContent = `¡Codigo ${code} aplicado! (${appliedDiscount * 100}% off)`;
+    msgEl.textContent = `¡Código ${code} aplicado! (${appliedDiscount * 100}% off)`;
     msgEl.className = 'promo-message success';
-    showToast(`Codigo promo ${code} aplicado!`);
+    showToast(`¡Código promo ${code} aplicado!`);
   } else {
     appliedDiscount = 0;
     appliedPromoCode = '';
     is2x1 = false;
-    msgEl.textContent = 'Codigo no valido.';
+    msgEl.textContent = 'Código no válido.';
     msgEl.className = 'promo-message error';
   }
   updateCart();
