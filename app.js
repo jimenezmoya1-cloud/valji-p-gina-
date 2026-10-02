@@ -43,7 +43,7 @@ function flavorColor(name) {
    - active: false  -> apaga la barra
    - endsAt: 'AAAA-MM-DD' -> se apaga sola después de esa fecha (null = no expira) */
 const PROMO = {
-  active: true,
+  active: false,
   code: 'CAMPEON',
   text: '15% en las Cajas MIX de geles',
   href: '#productos',
@@ -563,10 +563,10 @@ const PROMO_CODES = {
   'COACHVALJI': 0.23, 'GYMVALJI': 0.23, 'NUTRIVALJI': 0.23, 'ALIADOSVALJI': 0.23
 };
 
-const PROMO_2X1 = [
-  'DOBLE1', 'DUPLA', '2X1VALJI', '2X1POWER', 'DOSXUNO',
-  'PURA2X1', 'AMIGOS2X1', 'TEAM2X1', 'COMBO2X1', 'PAIR'
-];
+/* 2x1 apagado por ahora. Para reactivarlo, volvé a poner los códigos acá:
+   'DOBLE1', 'DUPLA', '2X1VALJI', '2X1POWER', 'DOSXUNO',
+   'PURA2X1', 'AMIGOS2X1', 'TEAM2X1', 'COMBO2X1', 'PAIR' */
+const PROMO_2X1 = [];
 
 /* ── UTILS ────────────────────────────────────────────────── */
 function formatPrice(n) {
