@@ -645,7 +645,7 @@ function updateCart() {
   document.getElementById('cart-subtotal').textContent = formatPrice(subtotal);
 
   const divDiscount = document.getElementById('div-discount');
-  if (appliedDiscount > 0) {
+  if (is2x1 || appliedDiscount > 0) {
     divDiscount.style.display = 'flex';
     document.getElementById('cart-discount').textContent = `-${formatPrice(discountAmount)}`;
   } else {
@@ -697,16 +697,15 @@ function buildWAOrderLink() {
   });
 
   const subtotal = cart.reduce((s, i) => s + i.price * i.qty, 0);
-  const discountAmount = Math.round(subtotal * appliedDiscount);
+  const discountAmount = is2x1 ? calc2x1Discount() : Math.round(subtotal * appliedDiscount);
   const afterDiscount = subtotal - discountAmount;
   const iva = Math.round(afterDiscount * 0.13);
   const total = afterDiscount + iva;
 
-  const discountAmount2 = is2x1 ? calc2x1Discount() : Math.round(subtotal * appliedDiscount);
   msg += `\nSubtotal: ${formatPrice(subtotal)}`;
   if (is2x1 || appliedDiscount > 0) {
     const label = is2x1 ? `2x1 (${appliedPromoCode})` : appliedPromoCode;
-    msg += `\nDescuento (${label}): -${formatPrice(discountAmount2)}`;
+    msg += `\nDescuento (${label}): -${formatPrice(discountAmount)}`;
   }
   msg += `\nIVA (13%): ${formatPrice(iva)}`;
   msg += `\n*TOTAL: ${formatPrice(total)}*`;
