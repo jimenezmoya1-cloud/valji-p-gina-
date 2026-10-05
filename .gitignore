@@ -1,0 +1,13 @@
+# macOS
+.DS_Store
+Icon?
+._*
+
+# Dependencias (se reinstalan con npm install)
+node_modules/
+
+# Sesiones de trabajo de Claude Code
+.claude/worktrees/
+
+# Historial de R
+.Rhistory

@@ -1,0 +1,14 @@
+# Todo lo que NO debe quedar publico en valjicr.com.
+# Vercel publica cada archivo que este en git, incluidos los .md.
+# Lo de aca sigue versionado en GitHub, pero no se sube al sitio.
+
+valji-marketing/
+catálogo/
+docs/
+PRODUCT.md
+README.md
+.claude/
+*.md
+
+# Productos fuera de catalogo (se guardan por si vuelven)
+archived/

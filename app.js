@@ -89,37 +89,6 @@ const WHATSAPP = '50686724000';
 const PRODUCTS = [
   /* =================== PROTEÍNAS =================== */
   {
-    id: 'oikos-shake',
-    name: 'Proteína Oikos Shake',
-    category: 'proteinas',
-    categoryLabel: 'Proteínas',
-    price: 2800,
-    priceLabel: '₡2.800',
-    priceUnit: 'por unidad',
-    flavors: ['Chocolate', 'Vainilla'],
-    images: [
-      'assets/img/productos/proteina-oikos-shake/chocolate.webp',
-      'assets/img/productos/proteina-oikos-shake/vainilla.webp',
-    ],
-    description: 'El Oikos Shake es una proteína ultraconveniente lista para consumir. Perfecta para después del entrenamiento o como snack de alta proteína en cualquier momento del día. Formulada para deportistas que buscan calidad y practicidad.',
-    benefits: ['Alta en proteína', 'Lista para beber', 'Sin preparación', 'Recuperación rápida'],
-  },
-  {
-    id: 'muscle-milk-shake',
-    name: 'Proteína Muscle Milk Shake',
-    category: 'proteinas',
-    categoryLabel: 'Proteínas',
-    price: 2500,
-    priceLabel: '₡2.500',
-    priceUnit: 'por unidad',
-    flavors: ['Chocolate'],
-    images: [
-      'assets/img/productos/proteina-muscle-milk-shake/chocolate.png',
-    ],
-    description: 'Muscle Milk Genuine es la proteína de alto rendimiento favorita de atletas profesionales. Con una mezcla avanzada de proteínas de acción rápida y lenta, te proporciona aminoácidos durante más tiempo para maximizar la síntesis muscular.',
-    benefits: ['Proteína multi-fuente', 'Soporte muscular prolongado', 'Sin azúcares añadidos', 'Ideal post-workout'],
-  },
-  {
     id: 'hidratante-proteina-2en1',
     name: 'Hidratante y Proteína 2 en 1',
     category: 'proteinas',
@@ -129,74 +98,11 @@ const PRODUCTS = [
     priceUnit: 'por unidad',
     flavors: ['Fresa-Sandía', 'Mango-Naranja'],
     images: [
-      'assets/img/hidratante-y-proteina-2-en-1/fresa-sandia.png',
-      'assets/img/hidratante-y-proteina-2-en-1/mango-naranja.png',
+      'assets/img/productos/proteinas/hidratante-proteina-2en1/fresa-sandia.png',
+      'assets/img/productos/proteinas/hidratante-proteina-2en1/mango-naranja.png',
     ],
     description: 'La solución perfecta para el deportista activo: combina la hidratación que necesitás con el aporte proteínico en un solo producto. Ideal para actividades como ciclismo, running y triatlón, donde la hidratación y la recuperación muscular son prioritarias.',
     benefits: ['Proteína + Hidratación', '2 en 1', 'Recuperación muscular', 'Repone electrolitos'],
-  },
-  {
-    id: 'gainer-muscle-milk-5lbs',
-    name: 'Gainer Muscle Milk 5 Lbs',
-    category: 'proteinas',
-    categoryLabel: 'Proteínas',
-    price: 48800,
-    priceLabel: '₡48.800',
-    priceUnit: 'por presentación',
-    flavors: ['Chocolate', 'Vainilla Creme'],
-    images: [
-      'assets/img/gainer-muscle-milk-5-lbs/chocolate.png',
-      'assets/img/gainer-muscle-milk-5-lbs/vainilla-creme-.png',
-    ],
-    description: 'El gainer premium de Muscle Milk combina carbohidratos complejos y proteínas de alta calidad para acelerar la ganancia de masa muscular. Ideal para atletas en etapa de volumen o quienes necesitan aumentar su ingesta calórica de forma saludable.',
-    benefits: ['Aumento de masa', 'Alta en calorías', 'Carbohidratos complejos', 'Proteína de alta calidad'],
-  },
-  {
-    id: 'proteina-mm-2lbs',
-    name: 'Proteína Muscle Milk 2 Lbs',
-    category: 'proteinas',
-    categoryLabel: 'Proteínas',
-    price: 22700,
-    priceLabel: '₡22.700',
-    priceUnit: 'por presentación',
-    flavors: ['Chocolate', 'Cookies & Creme', 'Fresa'],
-    images: [
-      'assets/img/proteina-muscle-milk-2-lbs/chocolate-copy.png',
-      'assets/img/proteina-muscle-milk-2-lbs/cookies-n-creme.png',
-      'assets/img/proteina-muscle-milk-2-lbs/fresa.png',
-    ],
-    description: 'Proteína premium Muscle Milk en presentación de 2 Lbs. Con su fórmula avanzada de proteínas lentas y rápidas, es perfecta para la recuperación y el crecimiento muscular. Ideal para triatlonistas, ciclistas y corredores de alta intensidad.',
-    benefits: ['Proteína multi-fuente', 'Recuperación muscular', 'Sin azúcares añadidos', 'Soporte anabólico'],
-  },
-  {
-    id: 'proteina-mm-5lbs',
-    name: 'Proteína Muscle Milk 5 Lbs',
-    category: 'proteinas',
-    categoryLabel: 'Proteínas',
-    price: 57400,
-    priceLabel: '₡57.400',
-    priceUnit: 'por presentación',
-    flavors: ['Chocolate'],
-    images: [
-      'assets/img/proteina-muscle-milk-5-lbs/chocolate.png',
-    ],
-    description: 'La presentación grande de Proteína Muscle Milk, perfecta para deportistas comprometidos con su rendimiento. Mayor rendimiento por precio y la misma calidad premium que caracteriza a la marca favorita de atletas de élite a nivel mundial.',
-    benefits: ['Mejor rendimiento por precio', 'Alta proteína por porción', 'Recuperación óptima', 'Para atletas serios'],
-  },
-  {
-    id: 'mm-cero-1.65lbs',
-    name: 'Proteína Muscle Milk Cero 1.65 Lbs',
-    category: 'proteinas',
-    categoryLabel: 'Proteínas',
-    price: 35900,
-    priceLabel: '₡35.900',
-    priceUnit: 'por presentación',
-    flavors: ['Vainilla Creme'],
-    images: [
-      'assets/img/productos/proteina-muscle-milk-cero-1.65-lbs/vainilla-creme.png',
-    ],
-    description: 'Muscle Milk Zero es la opción ideal para quienes buscan maximizar la ingesta proteica sin agregar azúcares ni calorías extra. Con 0g de azúcar y una alta concentración de proteína por porción, es perfecta para deportistas en etapa de definición.',
-    benefits: ['0g azúcar', 'Alta proteína', 'Baja en calorías', 'Ideal para definición'],
   },
 
   /* =================== POWERGEL =================== */
@@ -212,7 +118,7 @@ const PRODUCTS = [
     featured: true,
     flavors: ['Caja variada con 4 sabores'],
     images: [
-      'assets/img/productos/mix/original.webp',
+      'assets/img/productos/geles/caja-mix/sachets-original.webp',
     ],
     description: 'Una sola caja con 4 sabores distintos del PowerGel Original, para que no te aburrás de lo mismo en los entrenos largos ni en competencia. También es ideal para ir probando cuál te gusta más o para compartir. Es el gel de siempre de los profesionales desde 1996, con su mezcla de carbohidratos 2:1 (glucosa y fructosa) y unos 200mg de sodio por bolsita. Apto para veganos y certificado en la Cologne List®.',
     benefits: ['4 sabores en una caja', 'Proporción C2MAX 2:1', '~200mg sodio', 'Apto vegano', 'Cologne List®'],
@@ -229,7 +135,7 @@ const PRODUCTS = [
     featured: true,
     flavors: ['Caja variada con 4 sabores'],
     images: [
-      'assets/img/productos/mix/hydro.webp',
+      'assets/img/productos/geles/caja-mix/sachets-hydro.webp',
     ],
     description: 'Una sola caja con 4 sabores distintos del PowerGel Hydro, para que tengás variedad en cada salida. Es lo más nuevo de PowerBar en geles: textura más líquida y te lo tomás sin necesidad de agua. Trae carbohidratos de rápida absorción y electrolitos para que rindás hasta el final. Ideal para ir cambiando de sabor en la misma carrera o para compartir.',
     benefits: ['4 sabores en una caja', 'Sin necesidad de agua', 'Con electrolitos', 'Rápida absorción', 'Cologne List®'],
@@ -244,10 +150,10 @@ const PRODUCTS = [
     priceUnit: 'caja 24 unidades',
     flavors: ['Fresa-banano', 'Lima-Limón', 'Manzana verde (+Cafeína)', 'Vainilla'],
     images: [
-      'assets/img/productos/powergel-original-24u/fresa-banano.webp',
-      'assets/img/productos/powergel-original-24u/lima-limon.webp',
-      'assets/img/productos/powergel-original-24u/manzana-verde-cafeina-.webp',
-      'assets/img/productos/powergel-original-24u/vainilla.webp',
+      'assets/img/productos/geles/powergel-original-24u/fresa-banano.webp',
+      'assets/img/productos/geles/powergel-original-24u/lima-limon.webp',
+      'assets/img/productos/geles/powergel-original-24u/manzana-verde-cafeina.webp',
+      'assets/img/productos/geles/powergel-original-24u/vainilla.webp',
     ],
     description: 'El gel favorito de los deportistas profesionales desde 1996. Con proporción de hidratos de carbono 2:1 (glucosa + fructosa) y approx. 200mg de sodio por bolsita, mejora el rendimiento físico durante ejercicios de alta intensidad y larga duración. Apto para veganos. Certificado en la Cologne List®.',
     benefits: ['Proporción C2MAX 2:1', '~200mg sodio', 'Apto vegano', 'Cologne List®', 'Desde 1996'],
@@ -255,6 +161,7 @@ const PRODUCTS = [
   {
     id: 'fuel-30-gel',
     name: 'Fuel 30 Gel 12U',
+    agotado: true,
     category: 'geles',
     categoryLabel: 'PowerGel',
     price: 31850,
@@ -262,7 +169,7 @@ const PRODUCTS = [
     priceUnit: 'caja 12 unidades',
     flavors: ['Limón'],
     images: [
-      'assets/img/productos/fuel-30-gel-12u/limon.webp',
+      'assets/img/productos/geles/fuel-30-gel-12u/limon.webp',
     ],
     description: 'El Fuel 30 Gel de PowerBar pertenece a la Black Line y contiene 30g de hidratos de carbono por bolsita en proporción 1:0,8 (glucosa:fructosa). Diseñado para uso antes y durante el esfuerzo deportivo intenso. Ideal para ciclistas y triatlonistas en competencia.',
     benefits: ['30g carbohidratos', 'Proporción 1:0.8', 'Black Line', 'Antes y durante'],
@@ -277,10 +184,10 @@ const PRODUCTS = [
     priceUnit: 'caja 24 unidades',
     flavors: ['Cereza (+Cafeína)', 'Cola (+Cafeína)', 'Mojito (+Cafeína)', 'Naranja'],
     images: [
-      'assets/img/productos/powergel-hydro-24u/cereza-cafeina-.webp',
-      'assets/img/productos/powergel-hydro-24u/cola-cafeina-.webp',
-      'assets/img/productos/powergel-hydro-24u/mojito-cafeina-.webp',
-      'assets/img/productos/powergel-hydro-24u/naranja.webp',
+      'assets/img/productos/geles/powergel-hydro-24u/cereza-cafeina.webp',
+      'assets/img/productos/geles/powergel-hydro-24u/cola-cafeina.webp',
+      'assets/img/productos/geles/powergel-hydro-24u/mojito-cafeina.webp',
+      'assets/img/productos/geles/powergel-hydro-24u/naranja.webp',
     ],
     description: 'PowerGel Hydro es la innovación más avanzada de PowerBar en geles energéticos. Con textura más fluida y sin necesidad de tomar agua adicional, proporciona hidratos de carbono de rápida absorción y electrolitos. Disponible en sabores con y sin cafeína para adaptarse a cada momento de la carrera.',
     benefits: ['Sin necesidad de agua', 'Textura fluida', 'Con electrolitos', 'Rápida absorción', 'Cologne List®'],
@@ -295,8 +202,8 @@ const PRODUCTS = [
     priceUnit: 'caja 24 unidades',
     flavors: ['Frambuesa', 'Naranja'],
     images: [
-      'assets/img/productos/powergel-shots-24u/frambuesa.webp',
-      'assets/img/productos/powergel-shots-24u/naranja.webp',
+      'assets/img/productos/geles/powergel-shots-24u/frambuesa.webp',
+      'assets/img/productos/geles/powergel-shots-24u/naranja.webp',
     ],
     description: 'PowerGel Shots son gominolas energéticas de alta concentración de carbohidratos. Con la fórmula C2MAX de fuentes de glucosa y fructosa, ofrecen energía rápida y sostenida durante el esfuerzo. Son una alternativa práctica y deliciosa a los geles tradicionales.',
     benefits: ['Formato gominola', 'Fórmula C2MAX', 'Fácil de consumir', 'Energía rápida y sostenida'],
@@ -311,7 +218,7 @@ const PRODUCTS = [
     priceUnit: 'caja 16 unidades',
     flavors: ['Banana-Blueberry'],
     images: [
-      'assets/img/productos/powergel-smothies-16u/banana-blueberry.webp',
+      'assets/img/productos/geles/powergel-smoothies-16u/banana-blueberry.webp',
     ],
     description: 'PowerGel Smoothies combina el placer de un smoothie con la funcionalidad de un gel energético. Con frutas reales y carbohidratos de rápida disponibilidad, es la opción más deliciosa y natural para recargar energía durante actividades de larga duración como maratones y fondos en bicicleta.',
     benefits: ['Frutas reales', 'Textura smoothie', 'Carbohidratos rápidos', 'Muy fácil de tomar'],
@@ -328,7 +235,7 @@ const PRODUCTS = [
     priceUnit: 'por tubo',
     flavors: ['Limón (+Cafeína)'],
     images: [
-      'assets/img/productos/5-electrolytes/limon-cafeina-.webp',
+      'assets/img/productos/electrolitos/5-electrolytes/limon-cafeina.webp',
     ],
     description: 'Comprimidos efervescentes con 5 electrolitos esenciales: sodio, cloruro, potasio, calcio y magnesio. Sin calorías, sin azúcar, sin aspartamo. 10 comprimidos producen hasta 2,5L de bebida. El magnesio contribuye al metabolismo energético. Ideal para entrenamientos donde querés evitar carbohidratos extra. Cologne List®.',
     benefits: ['5 electrolitos', 'Sin calorías', 'Sin azúcar', 'Sin aspartamo', 'Cologne List®'],
@@ -343,9 +250,9 @@ const PRODUCTS = [
     priceUnit: 'presentación 600g',
     flavors: ['Limón', 'Naranja', 'Red Fruit'],
     images: [
-      'assets/img/productos/isoactive-bebida-isotonica-600g/limon.webp',
-      'assets/img/productos/isoactive-bebida-isotonica-600g/naranja.webp',
-      'assets/img/productos/isoactive-bebida-isotonica-600g/red-fruit.webp',
+      'assets/img/productos/electrolitos/isoactive-600g/limon.webp',
+      'assets/img/productos/electrolitos/isoactive-600g/naranja.webp',
+      'assets/img/productos/electrolitos/isoactive-600g/red-fruit.webp',
     ],
     description: 'Bebida isotónica PowerBar que aporta carbohidratos y electrolitos para mantener el rendimiento durante el ejercicio. Con la fórmula C2MAX y electrolitos en la proporción adecuada para reponer lo que perdés con el sudor. Excelente para entrenamientos de mediana a larga duración.',
     benefits: ['Fórmula C2MAX', 'Isotónica', 'Multi-sabor', 'Repone electrolitos', 'Durante el ejercicio'],
@@ -360,8 +267,8 @@ const PRODUCTS = [
     priceUnit: 'presentación 1320g',
     flavors: ['Naranja', 'Red Fruit'],
     images: [
-      'assets/img/productos/isoactive-bebida-isotonica-1320g/naranja.webp',
-      'assets/img/productos/isoactive-bebida-isotonica-1320g/red-fruit.webp',
+      'assets/img/productos/electrolitos/isoactive-1320g/naranja.webp',
+      'assets/img/productos/electrolitos/isoactive-1320g/red-fruit.webp',
     ],
     description: 'La presentación grande de Isoactive te ofrece mayor rendimiento por precio. Ideal para atletas de alto volumen de entrenamiento como ciclistas de largo aliento, triatlonistas y runners que necesitan reponer electrolitos y energía con regularidad.',
     benefits: ['Mayor volumen', 'Mejor precio por porción', 'Carbohidratos + electrolitos', 'Para atletas de alto volumen'],
@@ -376,7 +283,7 @@ const PRODUCTS = [
     priceUnit: 'por presentación',
     flavors: ['Limón'],
     images: [
-      'assets/img/productos/fuel-90-bebida-deportiva-alta-en-carbohidratos/limon.webp',
+      'assets/img/productos/electrolitos/fuel-90/limon.webp',
     ],
     description: 'Fuel 90 es la solución de carbohidratos de máxima concentración de PowerBar, diseñada para atletas de ultra-resistencia. Con 90g de carbohidratos por hora en la proporción 1:0,8, es el estándar oro para triatletas Ironman, ciclistas de etapas y corredores de ultra-fondo.',
     benefits: ['90g carbohidratos/hora', 'Ultra-resistencia', 'Proporción 1:0.8', 'Black Line', 'Triatlón Ironman'],
@@ -391,7 +298,7 @@ const PRODUCTS = [
     priceUnit: 'por presentación',
     flavors: ['Limón'],
     images: [
-      'assets/img/productos/iso-fuel-30-bebida-isotonica/limon.webp',
+      'assets/img/productos/electrolitos/iso-fuel-30/limon.webp',
     ],
     description: 'Bebida isotónica vegana con 30g de carbohidratos por ración en proporción 1:0,8 (glucosa:fructosa). Desarrollada para usarse antes y durante el ejercicio como parte del sistema de carbohidratos Black Line. Mejora la oxidación de carbohidratos y la tolerancia intestinal durante esfuerzos prolongados.',
     benefits: ['30g carbohidratos', 'Vegana', 'Black Line', 'Proporción 1:0.8', 'Tolerancia intestinal mejorada'],
@@ -408,9 +315,9 @@ const PRODUCTS = [
     priceUnit: 'caja 15 unidades',
     flavors: ['Banana Punch', 'Berry', 'Cookies & Cream'],
     images: [
-      'assets/img/productos/energize-original-15u/banana-punch.webp',
-      'assets/img/productos/energize-original-15u/berry.webp',
-      'assets/img/productos/energize-original-15u/cookies-cream.webp',
+      'assets/img/productos/barras/energize-original-15u/banana-punch.webp',
+      'assets/img/productos/barras/energize-original-15u/berry.webp',
+      'assets/img/productos/barras/energize-original-15u/cookies-cream.webp',
     ],
     description: 'La barrita energética original de PowerBar, pionera de la nutrición deportiva moderna. Con alta concentración de carbohidratos complejos para energía sostenida durante el ejercicio, perfecta para ciclistas, corredores y triatlonistas antes y durante la actividad física de larga duración.',
     benefits: ['Carbohidratos complejos', 'Energía sostenida', 'Durante el ejercicio', 'Cologne List®', 'La original desde 1986'],
@@ -425,27 +332,12 @@ const PRODUCTS = [
     priceUnit: 'caja 12 unidades',
     flavors: ['Caramelo', 'Choco-coco', 'Fresa Chocolate Blanco'],
     images: [
-      'assets/img/productos/proteincrisp-barrita-de-proteina-40-12u/caramelo.webp',
-      'assets/img/productos/proteincrisp-barrita-de-proteina-40-12u/choco-coco.webp',
-      'assets/img/productos/proteincrisp-barrita-de-proteina-40-12u/fresa-chocolate-blanco.webp',
+      'assets/img/productos/barras/proteincrisp-40-12u/caramelo.webp',
+      'assets/img/productos/barras/proteincrisp-40-12u/choco-coco.webp',
+      'assets/img/productos/barras/proteincrisp-40-12u/fresa-chocolate-blanco.webp',
     ],
     description: '40% de proteína de alta calidad en una textura crujiente y suave irresistible. Sin azúcares añadidos, con mezcla perfecta de ingredientes crujientes y capa suave. La recompensa ideal después del entrenamiento. Es el snack proteico premium para el deportista exigente. Cologne List®.',
     benefits: ['40% proteína', 'Sin azúcar añadido', 'Textura crujiente', 'Post-workout', 'Cologne List®'],
-  },
-  {
-    id: 'creatina-proseries',
-    name: 'Creatina ProSeries',
-    category: 'suplementos',
-    categoryLabel: 'Suplementos',
-    price: 23900,
-    priceLabel: '₡23.900',
-    priceUnit: 'por presentación',
-    flavors: ['Unflavored'],
-    images: [
-      'assets/img/productos/creatina/creatina-proseries.png',
-    ],
-    description: 'Creatina ProSeries de Muscle Milk es monohidrato de creatina de alta pureza. Ayuda a aumentar la fuerza, el rendimiento y la masa muscular. Certificado por NSF para Deporte, garantizando que está libre de sustancias prohibidas.',
-    benefits: ['100% Monohidrato', 'Aumento de fuerza', 'Masa muscular', 'NSF Certified'],
   },
   {
     id: 'anfora-powerbar',
@@ -457,7 +349,7 @@ const PRODUCTS = [
     priceUnit: 'por unidad',
     flavors: ['Estándar'],
     images: [
-      'assets/img/productos/anfora/anfora-powerbar.png',
+      'assets/img/productos/otros/anfora-powerbar/anfora-powerbar.png',
     ],
     description: 'Botella deportiva Ánfora PowerBar de alta calidad. Diseño ergonómico, fácil de apretar y con válvula de alto flujo. Ideal para hidratarte durante tus entrenamientos de ciclismo, running o en el gimnasio.',
     benefits: ['Fácil de apretar', 'Válvula alto flujo', 'Diseño ergonómico', 'Libre de BPA'],
@@ -475,8 +367,8 @@ const PRODUCTS = [
     nuevo: true,
     flavors: ['Fruity Pebbles', 'Cocoa Pebbles'],
     images: [
-      'assets/img/Junio_2026/dymatize-fruity.webp',
-      'assets/img/Junio_2026/dymatize-cocoa.webp',
+      'assets/img/productos/proteinas/dymatize-performance-shake/fruity-pebbles.webp',
+      'assets/img/productos/proteinas/dymatize-performance-shake/cocoa-pebbles.webp',
     ],
     description: 'Proteína lista para beber con 30 g por botella y el sabor de tus cereales favoritos. Solo 160 calorías y 1 g de azúcar, sin azúcar añadido, y 6.2 g de BCAA para la recuperación. Te la tomás directo después de entrenar o cuando querés un snack alto en proteína sin preparar nada. Botella de 11.5 oz, fácil de llevar.',
     benefits: ['30 g de proteína', '160 calorías', '1 g de azúcar', '6.2 g de BCAA', 'Lista para beber'],
@@ -492,9 +384,9 @@ const PRODUCTS = [
     nuevo: true,
     flavors: ['Tang Orange', 'Cherry Millions', 'Orange Strawberry'],
     images: [
-      'assets/img/Junio_2026/abe-orange.webp',
-      'assets/img/Junio_2026/abe-cherry.webp',
-      'assets/img/Junio_2026/abe-strawberry.webp',
+      'assets/img/productos/preentreno/abe-preworkout-rtd/tang-orange.webp',
+      'assets/img/productos/preentreno/abe-preworkout-rtd/cherry-millions.webp',
+      'assets/img/productos/preentreno/abe-preworkout-rtd/orange-strawberry.webp',
     ],
     description: 'Pre-entreno listo en lata, con 200 mg de cafeína, beta-alanina, L-citrulina y taurina para arrancar con energía y foco. Cero azúcar y solo 5 calorías, así que suma rendimiento sin sumar peso. Energía limpia y sin nervios, certificada Informed Sport y libre de sustancias prohibidas. Lata de 330 ml, en colaboración con Tang y Millions.',
     benefits: ['200 mg de cafeína', 'Beta-alanina + citrulina', 'Cero azúcar', 'Energía sin nervios', 'Informed Sport'],
@@ -510,10 +402,10 @@ const PRODUCTS = [
     nuevo: true,
     flavors: ['Blue Raspberry', 'Lemon & Lime', 'Tropical Vibes', 'Strawberry Raspberry'],
     images: [
-      'assets/img/Junio_2026/trimag-blue.webp',
-      'assets/img/Junio_2026/trimag-lemon.webp',
-      'assets/img/Junio_2026/trimag-tropical.webp',
-      'assets/img/Junio_2026/trimag-strawberry.webp',
+      'assets/img/productos/suplementos/tri-magnesium-200g/blue-raspberry.webp',
+      'assets/img/productos/suplementos/tri-magnesium-200g/lemon-lime.webp',
+      'assets/img/productos/suplementos/tri-magnesium-200g/tropical-vibes.webp',
+      'assets/img/productos/suplementos/tri-magnesium-200g/strawberry-raspberry.webp',
     ],
     description: 'Complejo de magnesio 3 en 1 que combina bisglicinato, taurato y citrato para darte 300 mg de magnesio elemental por toma. Te ayuda con la recuperación muscular, el descanso y a reducir los calambres y la fatiga. Rinde 50 tomas por tarro de 200 g, una al día disuelta en agua. Vegano, Halal y certificado Informed Sport.',
     benefits: ['300 mg de magnesio', '3 formas de magnesio', 'Mejor descanso', '50 tomas por tarro', 'Informed Sport'],
@@ -529,8 +421,8 @@ const PRODUCTS = [
     nuevo: true,
     flavors: ['Chocolate Pistacho', 'Chocolate Caramelo'],
     images: [
-      'assets/img/Junio_2026/wafer-pistacho.webp',
-      'assets/img/Junio_2026/wafer-caramelo.webp',
+      'assets/img/productos/barras/protein-wafer/chocolate-pistacho.webp',
+      'assets/img/productos/barras/protein-wafer/chocolate-caramelo.webp',
     ],
     description: 'Wafer crujiente bañado en chocolate con leche y con 10 g de proteína por barra. Sin azúcares añadidos, con ese toque dulce que se siente premio pero suma a tu meta. Barra de 39 g individual, perfecta para llevar en la mochila o para el antojo después de entrenar. Certificado Informed Sport.',
     benefits: ['10 g de proteína', 'Bañado en chocolate', 'Sin azúcar añadido', 'Para llevar', 'Informed Sport'],
@@ -538,6 +430,7 @@ const PRODUCTS = [
   {
     id: 'creatine-monohydrate-an',
     name: 'Creatine Monohydrate 250g',
+    agotado: true,
     category: 'suplementos',
     categoryLabel: 'Suplementos',
     price: 15362,
@@ -546,7 +439,7 @@ const PRODUCTS = [
     nuevo: true,
     flavors: ['Sin sabor'],
     images: [
-      'assets/img/Junio_2026/an-creatine.webp',
+      'assets/img/productos/suplementos/creatine-monohydrate-an/creatine-monohydrate.webp',
     ],
     description: 'Creatina monohidrato 100% pura y micronizada de Applied Nutrition. Te da 5 g por toma para aumentar la fuerza, la potencia y el rendimiento en los esfuerzos de alta intensidad, además de apoyar la recuperación y el crecimiento muscular. Rinde 50 tomas por tarro de 250 g. Certificada Informed Sport, probada lote por lote y libre de sustancias prohibidas.',
     benefits: ['5 g por toma', '100% micronizada', 'Fuerza y potencia', '50 tomas por tarro', 'Informed Sport'],
@@ -588,6 +481,7 @@ function getCartItem(productId, flavor) {
 }
 
 function addToCart(product, flavor, qty = 1) {
+  if (product.agotado) return;
   const existing = getCartItem(product.id, flavor);
   if (existing) {
     existing.qty += qty;
@@ -814,7 +708,17 @@ function openProductModal(product, preselectedFlavor) {
   // Tag "Nuevo"
   const nuevoBadge = document.getElementById('modal-nuevo-badge');
   nuevoBadge.textContent = 'Nuevo';
-  nuevoBadge.hidden = !product.nuevo;
+  nuevoBadge.hidden = !product.nuevo || !!product.agotado;
+
+  // Agotado: badge, sin cantidad ni carrito
+  const agotadoBadge = document.getElementById('modal-agotado-badge');
+  agotadoBadge.textContent = 'Agotado';
+  agotadoBadge.hidden = !product.agotado;
+  document.querySelector('.modal-qty-row').style.display = product.agotado ? 'none' : '';
+  const addBtn = document.getElementById('modal-add-cart');
+  if (!addBtn.dataset.label) addBtn.dataset.label = addBtn.innerHTML;
+  addBtn.disabled = !!product.agotado;
+  addBtn.innerHTML = product.agotado ? 'Agotado, vuelve pronto' : addBtn.dataset.label;
 
   // Images
   const mainImg = document.getElementById('modal-main-img');
@@ -864,11 +768,17 @@ function openProductModal(product, preselectedFlavor) {
   });
 
   // WhatsApp direct
-  const waText = `Hola Valji, me interesa: ${product.name}${(!isMix && selectedFlavor) ? ', ' + selectedFlavor : ''}. ¿Tienen disponibilidad? Precio: ${product.priceLabel}`;
-  document.getElementById('modal-whatsapp-btn').href = buildWALink(waText);
+  document.getElementById('modal-whatsapp-btn').href = buildWALink(modalWAText(product, (!isMix && selectedFlavor) ? selectedFlavor : ''));
 
   document.getElementById('product-modal-overlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+}
+
+function modalWAText(product, flavor) {
+  const item = `${product.name}${flavor ? ', ' + flavor : ''}`;
+  return product.agotado
+    ? `Hola Valji, vi que ${item} está agotado. ¿Me avisan cuando vuelva?`
+    : `Hola Valji, me interesa: ${item}. ¿Tienen disponibilidad? Precio: ${product.priceLabel}`;
 }
 
 function updateFlavorBtns() {
@@ -877,8 +787,7 @@ function updateFlavorBtns() {
   });
   if (currentProduct) {
     setProductHash(currentProduct, selectedFlavor);
-    const waText = `Hola Valji, me interesa: ${currentProduct.name}${selectedFlavor ? ', ' + selectedFlavor : ''}. ¿Tienen disponibilidad? Precio: ${currentProduct.priceLabel}`;
-    document.getElementById('modal-whatsapp-btn').href = buildWALink(waText);
+    document.getElementById('modal-whatsapp-btn').href = buildWALink(modalWAText(currentProduct, selectedFlavor));
   }
 }
 
@@ -914,17 +823,17 @@ let activeFilter = 'all';
 function renderProducts(filter = 'all') {
   activeFilter = filter;
   const base = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
-  // Orden: destacados (Cajas MIX) primero, luego los nuevos, luego el resto (estable)
-  const rank = p => p.featured ? 0 : (p.nuevo ? 1 : 2);
+  // Orden: destacados (Cajas MIX) primero, luego los nuevos, luego el resto y los agotados al final (estable)
+  const rank = p => p.agotado ? 3 : (p.featured ? 0 : (p.nuevo ? 1 : 2));
   const filtered = [...base].sort((a, b) => rank(a) - rank(b));
   const grid = document.getElementById('products-grid');
   grid.innerHTML = filtered.map((product, idx) => `
-    <div class="product-card${product.mix ? ' product-card-mix' : ''}" style="animation-delay:${idx * 0.06}s" data-id="${product.id}" role="button" tabindex="0" aria-label="Ver detalles de ${product.name}">
+    <div class="product-card${product.mix ? ' product-card-mix' : ''}${product.agotado ? ' product-card-agotado' : ''}" style="animation-delay:${idx * 0.06}s" data-id="${product.id}" role="button" tabindex="0" aria-label="Ver detalles de ${product.name}">
       <div class="product-card-img-wrap">
         <img class="product-card-img" src="${product.images[0]}" alt="${product.name}" loading="lazy" onerror="this.src=''" />
         <span class="product-card-category">${product.categoryLabel}</span>
         ${product.mix ? `<span class="product-card-mix-badge"><span class="icon-inline">${ICON.shuffle}</span>MIX</span>` : ''}
-        ${product.nuevo ? `<span class="product-card-nuevo-badge">Nuevo</span>` : ''}
+        ${product.agotado ? `<span class="product-card-agotado-badge">Agotado</span>` : (product.nuevo ? `<span class="product-card-nuevo-badge">Nuevo</span>` : '')}
       </div>
       <div class="product-card-body">
         <div class="product-card-name">${product.name}</div>
@@ -937,8 +846,8 @@ function renderProducts(filter = 'all') {
         <div class="product-card-price">${product.priceLabel}</div>
       </div>
       <div class="product-card-footer">
-        ${(product.flavors.length === 1 && !product.mix) ? `<button class="btn-card-quickadd" onclick="event.stopPropagation();addToCart(PRODUCTS.find(p=>p.id==='${product.id}'),'${product.flavors[0]}',1)" aria-label="Agregar al carrito"><span class="icon-inline">${ICON.cart}</span> Agregar</button>` : `<span class="btn-card-details">Ver detalles</span>`}
-        <a class="btn-card-wa" href="${buildWALink(`Hola Valji, me interesa: ${product.name}. ¿Tienen disponibilidad?`)}" target="_blank" aria-label="WhatsApp" title="Consultar por WhatsApp" onclick="event.stopPropagation()">
+        ${product.agotado ? `<span class="btn-card-details">Vuelve pronto</span>` : (product.flavors.length === 1 && !product.mix) ? `<button class="btn-card-quickadd" onclick="event.stopPropagation();addToCart(PRODUCTS.find(p=>p.id==='${product.id}'),'${product.flavors[0]}',1)" aria-label="Agregar al carrito"><span class="icon-inline">${ICON.cart}</span> Agregar</button>` : `<span class="btn-card-details">Ver detalles</span>`}
+        <a class="btn-card-wa" href="${buildWALink(product.agotado ? `Hola Valji, vi que ${product.name} está agotado. ¿Me avisan cuando vuelva?` : `Hola Valji, me interesa: ${product.name}. ¿Tienen disponibilidad?`)}" target="_blank" aria-label="WhatsApp" title="Consultar por WhatsApp" onclick="event.stopPropagation()">
           <svg width="18" height="18" viewBox="0 0 32 32" fill="none"><circle cx="16" cy="16" r="16" fill="#25D366"/><path d="M23.5 8.5C21.7 6.7 19.3 5.7 16.7 5.7C11.3 5.7 6.9 10.1 6.9 15.5C6.9 17.3 7.4 19 8.2 20.5L6.8 25.5L11.9 24.1C13.4 24.9 15 25.3 16.7 25.3C22.1 25.3 26.5 20.9 26.5 15.5C26.5 12.9 25.3 10.3 23.5 8.5ZM16.7 23.7C15.2 23.7 13.6 23.3 12.3 22.5L11.9 22.3L8.9 23.1L9.7 20.2L9.5 19.8C8.6 18.4 8.2 16.9 8.2 15.5C8.2 10.9 11.9 7.1 16.7 7.1C19 7.1 21.1 8 22.7 9.6C24.3 11.2 25.2 13.3 25.2 15.5C25.2 20.1 21.4 23.7 16.7 23.7ZM21.4 17.7C21.1 17.5 19.6 16.8 19.4 16.7C19.1 16.6 19 16.5 18.8 16.8C18.7 17.1 18.1 17.7 17.9 17.9C17.8 18.1 17.6 18.1 17.4 18C15.8 17.2 14.8 16.6 13.7 14.8C13.4 14.3 14 14.3 14.5 13.3C14.6 13.1 14.5 12.9 14.5 12.8C14.4 12.6 13.8 11.1 13.6 10.5C13.3 9.9 13.1 10 12.9 10C12.7 10 12.6 10 12.4 10C12.2 10 11.9 10.1 11.6 10.4C11.4 10.7 10.6 11.4 10.6 12.9C10.6 14.4 11.6 15.8 11.8 16.1C12 16.3 13.8 19 16.4 19.9C18.1 20.5 18.8 20.6 19.7 20.4C20.3 20.3 21.4 19.7 21.7 19C21.9 18.3 21.9 17.7 21.7 17.7H21.4Z" fill="white"/></svg>
         </a>
       </div>
